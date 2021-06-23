@@ -1,0 +1,48 @@
+<ion-content>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar lines='none'></ion-toolbar>
+  </ion-header>
+
+  <div class="logo-header">
+    <img src="../../assets/img/visitante.svg">
+    <h3>Cadastro</h3>
+    <span>Visitantes</span>
+  </div>
+
+  <form [formGroup]="formulario">
+    <div class="inputs">
+      <div class="input-cadastro1">
+        <ion-label>Nome Completo</ion-label>
+        <ion-input type="text" placeholder="" formControlName="nomeVisitante" name="nome" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>CPF</ion-label>
+        <ion-input type="text" placeholder="" formControlName="cpfVisitante" name="cpf" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Tipo de Visitante</ion-label>
+        <ion-select formControlName="tipoVisitante">
+          <ion-select-option>Visitante</ion-select-option>
+          <ion-select-option>Prestador de Serviço</ion-select-option>
+        </ion-select>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Bloco</ion-label>
+        <ion-input type="text" placeholder="" formControlName="blocoVisitante" name="bloco"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Apartamento</ion-label>
+        <ion-input type="number" placeholder="" formControlName="apartamentoVisitante" name="apartamento" required></ion-input>
+      </div>
+
+      <ion-button class="button-login">Cadastrar</ion-button>
+    </div>
+  </form>
+  <br>
+  <br>
+</ion-content>

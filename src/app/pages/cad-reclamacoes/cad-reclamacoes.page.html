@@ -3,9 +3,9 @@
     <ion-toolbar lines='none'></ion-toolbar>
   </ion-header>
   <div class="logo-header">
-    <img src="../../assets/img/documentos.svg">
-    <h3>Documentos</h3>
-    <span>Disponibilize o documentos para os moradores realizarem download</span>
+    <img src="../../assets/img/reclamacao.svg">
+    <h3>Reclamações</h3>
+    <span>Crie reclamações a respeito de moradores, sindico, funcionários ou serviços do condominio</span>
   </div>
 
   <form [formGroup]="formulario">
@@ -14,12 +14,20 @@
 
       <div class="input-cadastro2">
         <ion-label>Título</ion-label>
-        <ion-input type="text" placeholder="" name="tituloReclamação"></ion-input>
+        <ion-input type="text" placeholder="" formControlName="tituloReclamacao" name="tituloReclamação"></ion-input>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Descrição</ion-label>
-        <ion-textarea type="text" placeholder="" name="descricaoReclamação"></ion-textarea>
+        <ion-textarea type="text" placeholder="" formControlName="descricaoReclamacao" name="descricaoReclamação"></ion-textarea>
+      </div>
+
+      <div class="input-cadastro2" *ngIf="files == null">
+        <ion-label>Fotos</ion-label>
+        <ion-item type="button" lines="none" (click)="file.click()">
+          <span>Clique aqui para fazer upload</span>
+        </ion-item>
+        <input type="file" formControlName="fotoReclamacao" #file id="file" style="font-size: 13px !important">
       </div>
 
       <ion-button class="button-login">Cadastrar</ion-button>

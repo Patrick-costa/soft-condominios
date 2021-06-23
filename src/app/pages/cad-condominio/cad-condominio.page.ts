@@ -9,7 +9,7 @@ import {  Validators, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./cad-condominio.page.scss'],
 })
 export class CadCondominioPage implements OnInit {
-
+ 
   constructor(private http: HttpClient,
               private alertControl: AlertController,
               private formBuilder: FormBuilder) { }

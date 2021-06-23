@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadReclamacoesPageRoutingModule } from './cad-reclamacoes-routing.module';
+import { CadVisitantePageRoutingModule } from './cad-visitante-routing.module';
 
-import { CadReclamacoesPage } from './cad-reclamacoes.page';
+import { CadVisitantePage } from './cad-visitante.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { CadReclamacoesPage } from './cad-reclamacoes.page';
     ReactiveFormsModule,
     FormsModule,
     IonicModule,
-    CadReclamacoesPageRoutingModule
+    CadVisitantePageRoutingModule
   ],
-  declarations: [CadReclamacoesPage]
+  declarations: [CadVisitantePage]
 })
-export class CadReclamacoesPageModule {}
+export class CadVisitantePageModule {}

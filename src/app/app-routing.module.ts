@@ -35,6 +35,14 @@ const routes: Routes = [
     path: 'cad-reclamacoes',
     loadChildren: () => import('./pages/cad-reclamacoes/cad-reclamacoes.module').then( m => m.CadReclamacoesPageModule)
   },
+  {
+    path: 'livro',
+    loadChildren: () => import('./pages/livro/livro.module').then( m => m.LivroPageModule)
+  },
+  {
+    path: 'cad-visitante',
+    loadChildren: () => import('./pages/cad-visitante/cad-visitante.module').then( m => m.CadVisitantePageModule)
+  },
 
 ];
 

@@ -14,28 +14,16 @@
 
       <div class="input-cadastro2">
         <ion-label>Descrição do Arquivo</ion-label>
-        <ion-input type="text" placeholder="" name="descricaoArquivo"></ion-input>
+        <ion-input type="text" placeholder="" formControlName="descricaoArquivo" name="descricaoArquivo"></ion-input>
       </div>
-
-      <!-- #################################CONDIÇÃO PARA EXIBIR NOME DO ARQUIVO################################## -->
 
       <div class="input-cadastro2" *ngIf="files == null">
         <ion-label>Arquivo</ion-label>
         <ion-item type="button" lines="none" (click)="file.click()">
           <span>Clique aqui para fazer upload</span>
         </ion-item>
-        <input type="file" #file id="file" style="font-size: 13px !important" [(ngModel)]="files">
+        <input type="file" #file id="file" style="font-size: 13px !important" formControlName="documento">
       </div>
-
-      <div class="input-cadastro2" *ngIf="files != null">
-        <ion-label>Arquivo</ion-label>
-        <ion-item type="button" lines="none" (click)="file.click()">
-          <span>{{files}}</span>
-        </ion-item>
-        <input type="file" #file id="file" style="font-size: 13px !important" [(ngModel)]="files">
-      </div>
-
-      <!-- ###################################FIM DA CONDIÇÃO############################################## -->
 
       <ion-button class="button-login">Upload</ion-button>
     </div>
