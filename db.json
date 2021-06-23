@@ -1,0 +1,29 @@
+{
+  "login": [
+    {
+      "id": 1,
+      "email": "teste@gmail.com",
+      "senha": "teste"
+    },
+    {
+      "email": "teste@gmail.com",
+      "senha": "teste",
+      "id": 2
+    },
+    {
+      "email": "patrick23_costa@hotmail.com",
+      "senha": "7865",
+      "id": 3
+    },
+    {
+      "email": "patrick23_costa@hotmail.com",
+      "senha": "12345",
+      "id": 4
+    },
+    {
+      "email": "patrick23_costa@hotmail.com",
+      "senha": "1234",
+      "id": 5
+    }
+  ]
+}

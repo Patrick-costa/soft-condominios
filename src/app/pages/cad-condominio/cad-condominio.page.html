@@ -1,0 +1,80 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar lines='none'></ion-toolbar>
+  </ion-header>
+  <div class="logo-header">
+    <img src="../../assets/img/condominio.svg">
+    <h3>Cadastro</h3>
+    <span>Condominio</span>
+  </div>
+
+  <form [formGroup]="formulario">
+    <div class="inputs">
+
+      <div class="input-cadastro2">
+        <ion-label>Razão Social</ion-label>
+        <ion-input type="text" placeholder="" formControlName="razaoSocial" name="razaoSocial" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Nome Fantasia</ion-label>
+        <ion-input type="text" placeholder="" formControlName="nomeFantasia" name="nomeFantasia"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>CNPJ</ion-label>
+        <ion-input type="text" placeholder="" formControlName="cnpj" name="cnpj"></ion-input>
+      </div>
+
+
+      <div class="input-cadastro2">
+        <ion-label>CEP</ion-label>
+        <ion-input type="text" placeholder="" name="cep" formControlName="cep" required (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Rua</ion-label>
+        <ion-input type="text" placeholder="" value='{{dados.logradouro}}' formControlName="rua" name="rua" readonly></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Cidade</ion-label>
+        <ion-input type="text" placeholder="" value='{{dados.localidade}}' formControlName="cidade" name="cidade" required readonly></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Estado</ion-label>
+        <ion-input type="text" placeholder="" value='{{dados.bairro}}' name="estado" formControlName="estado" required readonly></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Número</ion-label>
+        <ion-input type="text" placeholder="" name="numero" formControlName="numero" required></ion-input>
+      </div>
+
+      <!-- #################################CONDIÇÃO PARA EXIBIR NOME DO ARQUIVO################################## -->
+
+      <div class="input-cadastro2" *ngIf="files == null">
+        <ion-label>Contrato Social</ion-label>
+        <ion-item type="button" lines="none" (click)="file.click()">
+          <span>Clique aqui para fazer upload</span>
+        </ion-item>
+        <input type="file" #file id="file" formControlName="arquivo" style="font-size: 13px !important" [(ngModel)]="files">
+      </div>
+
+      <div class="input-cadastro2" *ngIf="files != null">
+        <ion-label>Contrato Social</ion-label>
+        <ion-item type="button" lines="none" (click)="file.click()">
+          <span>{{files}}</span>
+        </ion-item>
+        <input type="file" #file id="file" formControlName="arquivo" style="font-size: 13px !important" [(ngModel)]="files">
+      </div>
+
+      <!-- ###################################FIM DA CONDIÇÃO############################################## -->
+
+      <ion-button class="button-login">Cadastrar</ion-button>
+    </div>
+  </form>
+  <br>
+  <br>
+</ion-content>

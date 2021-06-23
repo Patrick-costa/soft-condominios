@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar lines='none'></ion-toolbar>
+  </ion-header>
+  <div class="logo-header">
+    <img src="../../assets/img/documentos.svg">
+    <h3>Documentos</h3>
+    <span>Disponibilize o documentos para os moradores realizarem download</span>
+  </div>
+
+  <form [formGroup]="formulario">
+
+    <div class="inputs">
+
+      <div class="input-cadastro2">
+        <ion-label>Título</ion-label>
+        <ion-input type="text" placeholder="" name="tituloReclamação"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Descrição</ion-label>
+        <ion-textarea type="text" placeholder="" name="descricaoReclamação"></ion-textarea>
+      </div>
+
+      <ion-button class="button-login">Cadastrar</ion-button>
+    </div>
+  </form>
+  <br>
+  <br>
+</ion-content>

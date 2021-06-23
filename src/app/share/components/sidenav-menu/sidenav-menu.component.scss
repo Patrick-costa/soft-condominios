@@ -1,0 +1,98 @@
+
+mat-sidenav-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    mat-sidenav{
+        width: 300px;
+        background-color: #3f51b5;
+        overflow: hidden;
+        .perfil{
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+
+            .foto-perfil{
+                width: 60px;
+                
+                figure{
+                    width: 50px;
+                    margin: 0!important;
+                    padding: 0!important;
+                    img{
+                        width: 100%;
+                        border-radius: 100%;
+                    }
+                }
+            }
+            .descricao{
+                display: flex;
+                flex-direction: column;
+                .nome{
+                    font-size: 14px;
+                    font-weight: 300;
+                    text-transform: capitalize;
+                }
+                .email{
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+        .botoes{
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px;
+        }
+        mat-selection-list{
+            
+            mat-list-item-content{
+                padding: 0 16px!important;
+            }
+        }
+    
+        mat-accordion{
+            mat-expansion-panel{
+                background-color: #3f51b5;
+                mat-expansion-panel-header{
+                    padding: 0 16px!important;
+                    mat-panel-title{
+                        align-items: center;
+                        mat-icon{
+                            flex-shrink: 0;
+                            width: 24px;
+                            height: 24px;
+                            font-size: 24px;
+                            box-sizing: content-box;
+                            border-radius: 50%;
+                            padding: 4px;
+                        }
+                        span{
+                            padding: 0 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    mat-side-nav{
+        div:first-child::-webkit-scrollbar-track{
+            background: orange;
+        }
+       
+    }
+    mat-sidenav-content{
+        .example-spacer {
+            flex: 1 1 auto;
+          }
+    }
+}
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+  
+  

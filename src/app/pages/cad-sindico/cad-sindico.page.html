@@ -1,0 +1,50 @@
+<ion-content>
+
+  <ion-header class="ion-no-border">
+    <ion-toolbar lines='none'></ion-toolbar>
+  </ion-header>
+
+  <div class="logo-header">
+    <img src="../../assets/img/sindico.svg">
+    <h3>Cadastro</h3>
+    <span>Sindico</span>
+  </div>
+
+  <form [formGroup]="formulario">
+    <div class="inputs">
+      <div class="input-cadastro1">
+        <ion-label>Nome</ion-label>
+        <ion-input type="text" placeholder="" formControlName="nome" name="nome" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Sobrenome</ion-label>
+        <ion-input type="text" placeholder="" formControlName="sobrenome" name="sobrenome" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>CPF</ion-label>
+        <ion-input type="text" placeholder="" formControlName="cpf" name="cpf" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>E-mail</ion-label>
+        <ion-input type="email" placeholder="" formControlName="email" name="email" required></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Senha</ion-label>
+        <ion-input type="password" placeholder="" formControlName="senha" name="senha"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Confirmar Senha</ion-label>
+        <ion-input type="password" placeholder="" name="senha"></ion-input>
+      </div>
+
+      <ion-button class="button-login">Cadastrar</ion-button>
+    </div>
+  </form>
+  <br>
+  <br>
+</ion-content>

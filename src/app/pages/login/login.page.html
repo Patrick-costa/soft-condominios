@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-header class="ion-no-border">
+    <ion-toolbar lines='none'></ion-toolbar>
+  </ion-header>
+
+  <div class="logo-header">
+    <ion-icon src="../../assets/img/logo.svg"></ion-icon>
+  </div>
+
+  <form [formGroup]="formulario" (ngSubmit)="logar()">
+    <div class="inputs">
+      <div class="input-login">
+        <ion-label>Login</ion-label>
+        <ion-input type="email" placeholder="" formControlName="email" name="email"></ion-input>
+      </div>
+
+      <div class="input-senha">
+        <ion-label>Senha</ion-label>
+        <ion-input type="password" placeholder="" formControlName="senha" name="senha"></ion-input>
+        <ion-icon name="eye"></ion-icon>
+      </div>
+
+      <div class="esqueci-senha">
+        <ion-label> Esqueci minha senha </ion-label>
+      </div>
+
+      <center>
+        <ion-button type="submit" class="button-login">Entrar</ion-button>
+      </center>
+    </div>
+  </form>
+</ion-content>
