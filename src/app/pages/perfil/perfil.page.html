@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-header [translucent]="true">
+    <ion-toolbar style="--background: #5231A1; display: flex;">
+      <ion-buttons slot="start">
+        <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
+      </ion-buttons>
+      <ion-icon src="../../assets/icon/edituser.svg"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+  <br>
+  <div>
+    <ion-img src="../assets/img/perfil-soft.svg"></ion-img>
+    <center>
+      <h3 style="font-size: 20px;"><br>Perfil</h3>
+      <span class="login-cardapp">Minha Conta</span>
+    </center>
+    <br>
+    <div>
+      <span class="info">Nome</span><br>
+      <span class="info-bd">Patrick Araujo</span><br>
+    </div>
+
+    <div>
+      <span class="info">Condominio</span><br>
+      <span class="info-bd">Uba Pendotiba</span><br>
+    </div>
+
+    <div>
+      <span class="info">Apartamento</span><br>
+      <span class="info-bd">1003</span><br>
+    </div>
+
+    <div>
+      <span class="info">Bloco:</span><br>
+      <span class="info-bd">01</span><br>
+    </div>
+
+
+  </div>
+  <br>
+  <div>
+    <span class="info-senha">Alterar Senha</span><br>
+  </div>
+
+  <ion-list lines="none" style="width: 90%; margin: 0 auto">
+    <ion-item>
+      <ion-input class="input-login" type="password" placeholder="Senha Atual"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input class="input-login" type="password" placeholder="Nova Senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input class="input-login" type="password" placeholder="Confirmar Senha"></ion-input>
+    </ion-item>
+    <center>
+      <ion-button class="buton" (click)="redefinirSenha()">Alterar</ion-button>
+    </center>
+  </ion-list>
+  <br><br><br>
+
+
+</ion-content>

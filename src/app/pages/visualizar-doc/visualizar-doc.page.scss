@@ -1,0 +1,48 @@
+h1{
+    text-align: center;
+    color: #5231A1;
+    margin-top: 20px;
+}
+
+.mat-title{
+    font-size: 14px;
+}
+
+.button-link{
+    border-radius: 3px !important;
+    width: 50%;
+    height: 30px;
+    border: 1px solid #c4c4c4;
+    background: none;
+    color: #7F2FF0;
+    font-size: 11px;
+    cursor: pointer;
+    letter-spacing: 1.2;
+}
+
+.button-link:hover{
+    background: #7F2FF0;
+    color: #fff;
+}
+
+ion-header{
+    ion-icon{
+        color: #fff;
+        float: right;
+        font-size: 30px;
+    }
+
+    span{
+        color: #fff;
+        position: relative;
+        float: right;
+        top: 5px;
+    }
+}
+
+div.icones{
+    ion-icon{
+        float: right;
+        font-size: 25px;
+    }
+}

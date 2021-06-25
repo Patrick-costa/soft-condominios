@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -42,6 +42,22 @@ const routes: Routes = [
   {
     path: 'cad-visitante',
     loadChildren: () => import('./pages/cad-visitante/cad-visitante.module').then( m => m.CadVisitantePageModule)
+  },
+  {
+    path: 'visualizar-doc',
+    loadChildren: () => import('./pages/visualizar-doc/visualizar-doc.module').then( m => m.VisualizarDocPageModule)
+  },
+  {
+    path: 'visualizar-visitante',
+    loadChildren: () => import('./pages/visualizar-visitante/visualizar-visitante.module').then( m => m.VisualizarVisitantePageModule)
+  },
+  {
+    path: 'visualizar-ocorrencia',
+    loadChildren: () => import('./pages/visualizar-ocorrencia/visualizar-ocorrencia.module').then( m => m.VisualizarOcorrenciaPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
 
 ];

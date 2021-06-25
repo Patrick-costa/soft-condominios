@@ -1,0 +1,74 @@
+
+  ion-img{
+    max-width: 40% !important;
+    margin: auto;
+}
+
+h3{
+    margin: auto;
+    font-weight: 600;
+} 
+
+.login-cardapp{
+  color: #CFCDCD;
+}
+
+.item-perfil{
+  margin-top: 20px;
+  text-align:center !important;
+}
+
+.info{
+  font-size: 13px;
+  color: #CFCDCD;
+  text-align: center;
+}
+
+.info-bd{
+  font-size: 21px;
+  color: #5231A1;;
+}
+
+div{
+  margin: 0 auto;
+  width: 90%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.info-senha{
+  font-size: 18px;
+}
+
+.buton{
+  --background: #5231A1;;
+  color: #fff;
+  --border-radius: 5px;
+  width: 70%;
+  margin-top: 30px;
+}
+
+.input-login{
+  color: #666666;
+  height: 50px;
+  border: 1px solid #CFCDCD;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  margin-top: 30px;
+}
+
+ion-header{
+  ion-icon{
+      color: #fff;
+      float: right;
+      font-size: 30px;
+  }
+
+  span{
+      color: #fff;
+      position: relative;
+      float: right;
+      top: 5px;
+  }
+}

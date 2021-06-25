@@ -1,14 +1,14 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
-
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon" [md]="p.icon"></ion-icon>
+  <ion-split-pane contentId="main-content" >
+    <ion-menu contentId="main-content" type="overlay" >
+      <ion-content style="--background: #5231A1 !important">
+        <ion-list lines="none" style="background: #5231A1 !important">
+          <div style="display: flex; align-items: center; justify-content: center;">
+            <ion-icon src="./../assets/img/logosoft.svg" style="font-size: 140px;"></ion-icon>
+          </div>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index" >
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" [ios]="p.icon" [src]="p.src" [md]="p.icon"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -16,7 +16,6 @@
 
       </ion-content>
     </ion-menu>
-    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-router-outlet  id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

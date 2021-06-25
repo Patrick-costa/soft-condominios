@@ -1,7 +1,15 @@
 <ion-content>
-  <ion-header class="ion-no-border">
-    <ion-toolbar lines='none'></ion-toolbar>
+
+  <ion-header [translucent]="true">
+    <ion-toolbar style="--background: #5231A1">
+      <ion-buttons slot="start">
+        <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
   </ion-header>
+
+  
+  <br><br>
   <div class="logo-header">
     <img src="../../assets/img/reclamacao.svg">
     <h3>Reclamações</h3>

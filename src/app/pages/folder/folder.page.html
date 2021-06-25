@@ -1,12 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar style="--background: #000">
-    <ion-buttons slot="start">
-      <ion-menu-button style="color: #fff"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar style="--background: #5231A1">
+      <ion-buttons slot="start">
+        <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
   <div class="sub-header-menu">
     <ion-label class="label-name">Olá Patrick Araujo</ion-label>
   </div>
@@ -58,6 +59,7 @@
   <div class="links-option">
     <ion-grid>
       <ion-row>
+
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
           <div class="div-option">
             <ion-icon style="color: #fff; font-size: 40px;" name="desktop"></ion-icon>
@@ -66,112 +68,42 @@
         </ion-col>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="book"></ion-icon>
+          <div class="div-option" routerLink="/cadastro">
+            <ion-icon style="color: #fff; font-size: 40px;" src="../../assets/icon/cad-morador.svg"></ion-icon>
           </div>
-          <span class="span-text-option">Livro de Ocorrências</span>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="alert"></ion-icon>
-          </div>
-          <span class="span-text-option">Área de Reclamações</span>
+          <span class="span-text-option">Cadastrar Moradores</span>
         </ion-col>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="bulb"></ion-icon>
-          </div>
-          <span class="span-text-option">Área de Sugestões</span>
-        </ion-col>
-      </ion-row>
-
-      <br>
-      <ion-row>
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="cube"></ion-icon>
-          </div>
-          <span class="span-text-option">Encomendas</span>
-        </ion-col>
-
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="bar-chart"></ion-icon>
-          </div>
-          <span class="span-text-option">Votação Interativa</span>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="cash"></ion-icon>
-          </div>
-          <span class="span-text-option">Controle Financeiro</span>
-        </ion-col>
-
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="documents"></ion-icon>
+          <div class="div-option" routerLink="/visualizar-doc">
+            <ion-icon style="color: #fff; font-size: 40px;" src="../../assets/icon/doc.svg"></ion-icon>
           </div>
           <span class="span-text-option">Documentos</span>
         </ion-col>
-      </ion-row>
 
-      <br>
-
-      <ion-row>
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="search"></ion-icon>
+          <div class="div-option" routerLink="/visualizar-visitante">
+            <ion-icon style="color: #fff; font-size: 40px;" src="../../assets/icon/visitor.svg"></ion-icon>
           </div>
-          <span class="span-text-option">Achados e Perdidos</span>
+          <span class="span-text-option">Visitantes</span>
         </ion-col>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="people-circle"></ion-icon>
+          <div class="div-option" routerLink="/visualizar-ocorrencia">
+            <ion-icon style="color: #fff; font-size: 40px; text-align: center;" src="../../assets/icon/ocorrencia.svg">
+            </ion-icon>
           </div>
-          <span class="span-text-option">Cadastro de Visitantes</span>
+          <span class="span-text-option">Ocorrências</span>
         </ion-col>
-      </ion-row>
-
-      <ion-row>
+        
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="list"></ion-icon>
+          <div class="div-option" routerLink="/visualizar-ocorrencia">
+            <ion-icon style="color: #fff; font-size: 40px; text-align: center;" src="../../assets/icon/ocorrencia.svg">
+            </ion-icon>
           </div>
-          <span class="span-text-option">Escala de Funcionários</span>
+          <span class="span-text-option">Ocorrências</span>
         </ion-col>
 
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="calendar-number"></ion-icon>
-          </div>
-          <span class="span-text-option">Manutenção e Obras</span>
-        </ion-col>
-      </ion-row>
-
-      <br>
-
-      <ion-row>
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="Checkmark"></ion-icon>
-          </div>
-          <span class="span-text-option">Reserva de Atividades</span>
-        </ion-col>
-
-        <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="thumbs-up"></ion-icon>
-          </div>
-          <span class="span-text-option">Atividades</span>
-        </ion-col>
       </ion-row>
 
     </ion-grid>

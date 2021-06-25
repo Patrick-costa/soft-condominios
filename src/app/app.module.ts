@@ -6,17 +6,13 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NgxMaskIonicModule } from 'ngx-mask-ionic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
+import { MaterialDesignModule } from './share/material-design/material-design.module';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, MatSliderModule,
-    NgxMaskIonicModule.forRoot({
-      dropSpecialCharacters: false
-    }),
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, MaterialDesignModule,
     BrowserAnimationsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

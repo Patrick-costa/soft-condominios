@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+    color: #5231A1;
+    margin-top: 20px;
+}
+
+.mat-title{
+    font-size: 14px;
+}
+
+.status{
+    width: 14px;
+    height: 14px;
+    background: green;
+    border-radius: 50%;
+    position: relative;
+    top: 8px;
+}
+
+ion-list{
+    ion-item{
+
+        --color: #565656 ;
+        font-size: 15px;
+    }
+}
