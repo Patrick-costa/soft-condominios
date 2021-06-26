@@ -67,7 +67,11 @@ const routes: Routes = [
   {
     path: 'cad-informativo',
     loadChildren: () => import('./pages/cad-informativo/cad-informativo.module').then( m => m.CadInformativoPageModule)
+  },  {
+    path: 'visualizar-encomenda',
+    loadChildren: () => import('./pages/visualizar-encomenda/visualizar-encomenda.module').then( m => m.VisualizarEncomendaPageModule)
   },
+
 
 ];
 
