@@ -8,17 +8,26 @@
     </ion-toolbar>
   </ion-header>
 
-  
-  <br><br>
+
+  <br>
+  <br>
   <div class="logo-header">
     <img src="../../assets/img/reclamacao.svg">
-    <h3>Reclamações</h3>
-    <span>Crie reclamações a respeito de moradores, sindico, funcionários ou serviços do condominio</span>
+    <h3>Reclamações e Ocorrências</h3>
+    <span>Crie reclamações ou ocorrências a respeito de moradores, sindico, funcionários ou serviços do condominio</span>
   </div>
 
   <form [formGroup]="formulario">
 
     <div class="inputs">
+
+      <div class="input-cadastro2">
+        <ion-label>Tipo</ion-label>
+        <ion-select formControlName="tipo">
+          <ion-select-option>Reclamação</ion-select-option>
+          <ion-select-option>Ocorrência</ion-select-option>
+        </ion-select>
+      </div>
 
       <div class="input-cadastro2">
         <ion-label>Título</ion-label>

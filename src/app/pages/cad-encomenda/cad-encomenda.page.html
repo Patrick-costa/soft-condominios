@@ -1,0 +1,49 @@
+<ion-content>
+
+  <ion-header [translucent]="true">
+    <ion-toolbar style="--background: rgb(45, 1, 148) !important; display: flex;">
+      <ion-buttons slot="start">
+        <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <br>
+  <br>
+  <div class="logo-header">
+    <img src="../../assets/img/entrega.svg">
+    <h3>Entregas e Encomendas</h3>
+    <span>Registre aqui as encomendas recebidas na portaria</span>
+  </div>
+
+  <form [formGroup]="formulario">
+
+    <div class="inputs">
+
+      <div class="input-cadastro2">
+        <ion-label>Destinatario</ion-label>
+        <ion-input type="text" placeholder="" formControlName="destinatario"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Número do Bloco</ion-label>
+        <ion-input type="text" placeholder="" formControlName="numeroBloco"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Apartamento</ion-label>
+        <ion-input type="text" placeholder="" formControlName="apartamentoEntrega"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Descrição da Entrega</ion-label>
+        <ion-textarea type="text" placeholder="" formControlName="descricaoEntrega"></ion-textarea>
+      </div>
+
+      <ion-button class="button-login">Cadastrar</ion-button>
+    </div>
+  </form>
+  <br>
+  <br>
+</ion-content>

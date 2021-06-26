@@ -20,6 +20,7 @@ export class CadReclamacoesPage implements OnInit {
     this.formulario = this.formBuilder.group({
       tituloReclamacao: ['', Validators.required],
       descricaoReclamacao: ['', Validators.required],
+      tipo: ['', Validators.required],
       fotoReclamacao: [''],
     });
   }

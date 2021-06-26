@@ -28,13 +28,7 @@ export class LoginPage implements OnInit {
 
   logar(){
     this.autenticacao.login(this.formulario.value)
-    .subscribe(
-      sucess => {
-        
-        this.router.navigate(['/folder'])
-      },
-      erro => ''
-    );
+    .subscribe( complete => this.router.navigate(['folder']), error => console.log(error));
   }
 
   createForm() {

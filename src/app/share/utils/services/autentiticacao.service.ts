@@ -7,6 +7,7 @@ import { StorageService } from './storage.service';
 import { AccountServiceService } from './account-service.service';
 import { Router } from '@angular/router';
 import { localUser } from '../../../core/models/localUser';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class AutentiticacaoService {
 
   email: string;
   senha: string;
-  jwt: any;
+  jwt = new JwtHelperService();
 
 
   constructor(
@@ -36,7 +37,7 @@ export class AutentiticacaoService {
     }).pipe(
       tap(response => {
         console.log(response)
-        // this.succesfulLogin(response.headers.get('Authorization'))
+        this.succesfulLogin(response.headers.get('Authorization'))
       })
     );
   }

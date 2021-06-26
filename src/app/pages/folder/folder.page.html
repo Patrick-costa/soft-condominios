@@ -1,15 +1,17 @@
 <ion-content [fullscreen]="true">
 
   <ion-header [translucent]="true">
-    <ion-toolbar style="--background: #5231A1">
+    <ion-toolbar style="--background: #5231A1;">
       <ion-buttons slot="start">
         <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
+        <ion-label style="color: #fff; font-weight: 500; font-size: 16px; position: relative; top: 2px; letter-spacing: 1px">Soft Condominios</ion-label>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
   <div class="sub-header-menu">
-    <ion-label class="label-name">Olá Patrick Araujo</ion-label>
+    <ion-icon name="person"></ion-icon>
+    <ion-label class="label-name">Sindico: Mahamoud Marfri</ion-label>
   </div>
 
   <div class="card-container">
@@ -37,6 +39,9 @@
     <h3>
       <ion-icon name="alert-circle" size="large"></ion-icon>&nbsp;Informativos
     </h3>
+
+    <div class="hr"></div>
+
     <ion-slides [options]="sliderOptions" startAutoplay>
       <ion-slide class="slide">
 
@@ -56,24 +61,31 @@
     </ion-slides>
   </div>
 
+<br><br>
+  <h3 style="color: #5231A1;">
+    <ion-icon src="../../assets/icon/atalhos.svg" size="large" ></ion-icon>&nbsp;Painel de Atalhos
+  </h3>
+
+  <div class="hr"></div>
   <div class="links-option">
+
     <ion-grid>
       <ion-row>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
           <div class="div-option">
-            <ion-icon style="color: #fff; font-size: 40px;" name="desktop"></ion-icon>
+            <ion-icon name="desktop"></ion-icon>
+            <span class="span-text-option">Área do Sindico</span>
           </div>
-          <span class="span-text-option">Área do Sindico</span>
         </ion-col>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
           <div class="div-option" routerLink="/cadastro">
-            <ion-icon style="color: #fff; font-size: 40px;" src="../../assets/icon/cad-morador.svg"></ion-icon>
+            <ion-icon src="../../assets/icon/cad-morador.svg"></ion-icon>
+            <span class="span-text-option">Cadastrar Moradores</span>
           </div>
-          <span class="span-text-option">Cadastrar Moradores</span>
         </ion-col>
-
+<!-- 
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
           <div class="div-option" routerLink="/visualizar-doc">
             <ion-icon style="color: #fff; font-size: 40px;" src="../../assets/icon/doc.svg"></ion-icon>
@@ -95,14 +107,14 @@
           </div>
           <span class="span-text-option">Ocorrências</span>
         </ion-col>
-        
+
         <ion-col size="6" style="margin: 0 auto; text-align: center;">
-          <div class="div-option" routerLink="/visualizar-ocorrencia">
+          <div class="div-option" routerLink="/cad-informativo">
             <ion-icon style="color: #fff; font-size: 40px; text-align: center;" src="../../assets/icon/ocorrencia.svg">
             </ion-icon>
           </div>
           <span class="span-text-option">Ocorrências</span>
-        </ion-col>
+        </ion-col> -->
 
       </ion-row>
 

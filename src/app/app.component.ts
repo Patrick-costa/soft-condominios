@@ -13,6 +13,8 @@ export class AppComponent {
     { title: 'Cadastrar Documentos', url: 'documentos', src:"../../assets/icon/baixar-doc.svg" },
     { title: 'Cadastrar Reclamações', url: 'cad-reclamacoes', src:"../../assets/icon/cad-recla.svg" },
     { title: 'Cadastrar Visitante', url: 'cad-visitante', src:"../../assets/icon/cad-visit.svg" },
+    { title: 'Cadastrar Encomenda', url: 'cad-encomenda', icon: 'cube' },
+    { title: 'Logout', url: '', icon: 'log-out' },
   ];
   constructor() {}
 }

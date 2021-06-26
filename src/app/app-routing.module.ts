@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutenticacaoGuard } from './core/guards/autenticacao.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'folder',
-    loadChildren: () => import('./pages/folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./pages/folder/folder.module').then( m => m.FolderPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'login',
@@ -58,6 +59,14 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'cad-encomenda',
+    loadChildren: () => import('./pages/cad-encomenda/cad-encomenda.module').then( m => m.CadEncomendaPageModule)
+  },
+  {
+    path: 'cad-informativo',
+    loadChildren: () => import('./pages/cad-informativo/cad-informativo.module').then( m => m.CadInformativoPageModule)
   },
 
 ];

@@ -1,0 +1,42 @@
+<ion-content>
+
+  <ion-header [translucent]="true">
+    <ion-toolbar style="--background: rgb(45, 1, 148) !important; display: flex;">
+      <ion-buttons slot="start">
+        <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <br>
+  <br>
+  <div class="logo-header">
+    <img src="../../assets/img/informativo.svg">
+    <h3>Informativo</h3>
+    <span>Registre aqui os informativos para os moradores</span>
+  </div>
+
+  <form [formGroup]="formulario">
+
+    <div class="inputs">
+
+      <div class="input-cadastro2">
+        <ion-label>Descrição</ion-label>
+        <ion-input type="text" placeholder="" formControlName="descricaoInformativo"></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
+        <ion-label>Fotos</ion-label>
+        <ion-item type="button" lines="none" (click)="file.click()">
+          <span>Clique aqui para fazer upload</span>
+        </ion-item>
+        <input type="file" formControlName="fotoInformativo" #file id="file" style="font-size: 13px !important">
+      </div>
+
+      <ion-button class="button-login">Cadastrar</ion-button>
+    </div>
+  </form>
+  <br>
+  <br>
+</ion-content>
