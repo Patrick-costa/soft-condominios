@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
+import { AutentiticacaoService } from './share/utils/services/autentiticacao.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,7 +17,13 @@ export class AppComponent {
     { title: 'Cadastrar Reclamações', url: 'cad-reclamacoes', src:"../../assets/icon/cad-recla.svg" },
     { title: 'Cadastrar Visitante', url: 'cad-visitante', src:"../../assets/icon/cad-visit.svg" },
     { title: 'Cadastrar Encomenda', url: 'cad-encomenda', icon: 'cube' },
-    { title: 'Logout', url: '', icon: 'log-out' },
   ];
-  constructor() {}
+  constructor(private authService: AutentiticacaoService,
+              private router: Router,
+              public menuCtrl: MenuController) {}
+
+  logout(){
+    this.authService.logout();
+    this.menuCtrl.close();
+  }
 }
