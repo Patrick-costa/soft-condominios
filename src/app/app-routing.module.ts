@@ -22,54 +22,55 @@ const routes: Routes = [
   },
   {
     path: 'cad-sindico',
-    loadChildren: () => import('./pages/cad-sindico/cad-sindico.module').then( m => m.CadSindicoPageModule)
+    loadChildren: () => import('./pages/cad-sindico/cad-sindico.module').then( m => m.CadSindicoPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'cad-condominio',
-    loadChildren: () => import('./pages/cad-condominio/cad-condominio.module').then( m => m.CadCondominioPageModule)
+    loadChildren: () => import('./pages/cad-condominio/cad-condominio.module').then( m => m.CadCondominioPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'documentos',
-    loadChildren: () => import('./pages/documentos/documentos.module').then( m => m.DocumentosPageModule)
+    loadChildren: () => import('./pages/documentos/documentos.module').then( m => m.DocumentosPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'cad-reclamacoes',
-    loadChildren: () => import('./pages/cad-reclamacoes/cad-reclamacoes.module').then( m => m.CadReclamacoesPageModule)
+    loadChildren: () => import('./pages/cad-reclamacoes/cad-reclamacoes.module').then( m => m.CadReclamacoesPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'livro',
-    loadChildren: () => import('./pages/livro/livro.module').then( m => m.LivroPageModule)
+    loadChildren: () => import('./pages/livro/livro.module').then( m => m.LivroPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'cad-visitante',
-    loadChildren: () => import('./pages/cad-visitante/cad-visitante.module').then( m => m.CadVisitantePageModule)
+    loadChildren: () => import('./pages/cad-visitante/cad-visitante.module').then( m => m.CadVisitantePageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'visualizar-doc',
-    loadChildren: () => import('./pages/visualizar-doc/visualizar-doc.module').then( m => m.VisualizarDocPageModule)
+    loadChildren: () => import('./pages/visualizar-doc/visualizar-doc.module').then( m => m.VisualizarDocPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'visualizar-visitante',
-    loadChildren: () => import('./pages/visualizar-visitante/visualizar-visitante.module').then( m => m.VisualizarVisitantePageModule)
+    loadChildren: () => import('./pages/visualizar-visitante/visualizar-visitante.module').then( m => m.VisualizarVisitantePageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'visualizar-ocorrencia',
-    loadChildren: () => import('./pages/visualizar-ocorrencia/visualizar-ocorrencia.module').then( m => m.VisualizarOcorrenciaPageModule)
+    loadChildren: () => import('./pages/visualizar-ocorrencia/visualizar-ocorrencia.module').then( m => m.VisualizarOcorrenciaPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'cad-encomenda',
-    loadChildren: () => import('./pages/cad-encomenda/cad-encomenda.module').then( m => m.CadEncomendaPageModule)
+    loadChildren: () => import('./pages/cad-encomenda/cad-encomenda.module').then( m => m.CadEncomendaPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
     path: 'cad-informativo',
-    loadChildren: () => import('./pages/cad-informativo/cad-informativo.module').then( m => m.CadInformativoPageModule)
-  },  {
+    loadChildren: () => import('./pages/cad-informativo/cad-informativo.module').then( m => m.CadInformativoPageModule),  canActivate:[AutenticacaoGuard]
+  },
+  {
     path: 'visualizar-encomenda',
-    loadChildren: () => import('./pages/visualizar-encomenda/visualizar-encomenda.module').then( m => m.VisualizarEncomendaPageModule)
+    loadChildren: () => import('./pages/visualizar-encomenda/visualizar-encomenda.module').then( m => m.VisualizarEncomendaPageModule),  canActivate:[AutenticacaoGuard]
   },
 
 
