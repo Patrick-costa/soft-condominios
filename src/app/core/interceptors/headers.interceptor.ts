@@ -16,7 +16,6 @@ export class HeadersInterceptor implements HttpInterceptor {
   constructor(private storage: StorageService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("tesre")
     let localUser = this.storage.getLocalUser();
     let N = API_CONFIG.baseurl.length;
     let requestToAPI = request.url.substring(0, N) == API_CONFIG.baseurl;
