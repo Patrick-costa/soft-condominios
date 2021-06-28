@@ -103,6 +103,44 @@ div.icones{
 .paragraph-card {
     width: 95%;
     margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.192);
     text-align: left;
+    color: #5231A1;
+    background: #E3D9FD;
+    font-size: 13px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+
+    p{
+        margin-left: 10px;
+        position: relative;
+        top: 5px;
+    }
   }
-  
+
+.paragraph-card-2 {
+    width: 95%;
+    margin: 0 auto;
+    background: #5231A1;
+    border-radius: 5px 0 0px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #E3D9FD;
+  }
+
+.card-calendario{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.paragraph1{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+}

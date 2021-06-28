@@ -16,28 +16,42 @@
     <mat-expansion-panel-header>
       <mat-panel-title style="display: flex; align-items: center;">
         <ion-icon src="../../assets/icon/setaoc.svg" style="font-size: 30px;"></ion-icon>
-        &nbsp;&nbsp;<span style="font-size: 12px;">#001 - Excesso de Barulho</span><br>
+        &nbsp;&nbsp;
+        <span style="font-size: 12px;">#001 - Excesso de Barulho</span>
+        <br>
       </mat-panel-title>
 
     </mat-expansion-panel-header>
-    <span style="color: #6200EE">Reclamação em 09/09/2021 às 21:00hrs</span><br>
-    <span style="color: #6200EE">Autor: Manoel Santos (bloco 02 - apt101)</span><br>
+    <span style="color: #6200EE">Reclamação em 09/09/2021 às 21:00hrs</span>
+    <br>
+    <span style="color: #6200EE">Autor: Manoel Santos (bloco 02 - apt101)</span>
+    <br>
     <span style="color: #6200EE; font-weight: 600">Tipo: Reclamação</span>
-    <br><br>
+    <br>
+    <br>
     <ion-grid>
       <ion-row>
         <ion-col size='3' style="text-align: center;">
-          <span><b>Código</b></span><br>
+          <span>
+            <b>Código</b>
+          </span>
+          <br>
           <span>#001</span>
         </ion-col>
 
         <ion-col size='5' style="text-align: center;">
-          <span><b>Residencia</b></span><br>
+          <span>
+            <b>Residencia</b>
+          </span>
+          <br>
           <span>Bl02 - APT101</span>
         </ion-col>
 
         <ion-col size='4' style="text-align: center;">
-          <span><b>Status</b></span><br>
+          <span>
+            <b>Status</b>
+          </span>
+          <br>
           <span>Pendente</span>
         </ion-col>
       </ion-row>
@@ -45,99 +59,129 @@
 
     <br>
     <hr>
-    <h3><b>Acompanhamento</b></h3>
+    <h3>
+      <b>Acompanhamento</b>
+    </h3>
 
     <form class="example-form">
       <mat-form-field style="width: 100%;">
         <mat-label>Comente Aqui</mat-label>
-        <textarea type="email" matInput style="height: 50px;" [errorStateMatcher]="matcher"
-          placeholder="Converse com o morador"></textarea>
+        <textarea type="email" matInput style="height: 50px;" [errorStateMatcher]="matcher" placeholder="Converse com o morador"></textarea>
       </mat-form-field>
-    
+
       <div class="anexo">
-        <!-- <ion-item type="button" lines="none" (click)="file.click()">
-          <span style="text-align: center;">Anexar Arquivos</span>
-        </ion-item> -->
+        <br>
+        <ion-button (click)="file.click()">Anexar Arquivos</ion-button>
+        <br>
+        <br>
         <ion-button>Enviar Comentario</ion-button>
         <input type="file" #file id="file" style="font-size: 13px !important">
       </div>
     </form>
 
-    <br><br>
-    <h4><b>Ultimos Comentários</b></h4>
+    <br>
+    <br>
+    <h4>
+      <b>Ultimos Comentários</b>
+    </h4>
 
     <ion-card>
-      <ion-card-content > 
-        <span style="color: #7F2FF0; font-size: 13px;">Maicon Hugo</span><br>
-        <span style="font-size: 12px;">Aglomeração no apartamento 501</span><br>
-        <span style="font-size: 10px;">5 horas atrás</span><br>
+      <ion-card-content>
+        <span style="color: #7F2FF0; font-size: 13px;">Maicon Hugo</span>
+        <br>
+        <span style="font-size: 12px;">Aglomeração no apartamento 501</span>
+        <br>
+        <span style="font-size: 10px;">5 horas atrás</span>
+        <br>
       </ion-card-content>
     </ion-card>
-    
+
   </mat-expansion-panel>
 
   <mat-expansion-panel hideToggle style="min-height: 10px; width: 90%; margin: 0 auto; margin-top: 20px !important;">
-      <mat-expansion-panel-header>
-        <mat-panel-title style="display: flex; align-items: center;">
-          <ion-icon src="../../assets/icon/setaoc.svg" style="font-size: 30px;"></ion-icon>
-          &nbsp;&nbsp;<span style="font-size: 12px;">#001 - Excesso de Barulho</span><br>
-        </mat-panel-title>
-  
-      </mat-expansion-panel-header>
-      <span style="color: #6200EE">Reclamação em 09/09/2021 às 21:00hrs</span><br>
-      <span style="color: #6200EE">Autor: Manoel Santos (bloco 02 - apt101)</span><br>
-      <span style="color: #6200EE; font-weight: 600">Tipo: Reclamação</span>
-      <br><br>
-      <ion-grid>
-        <ion-row>
-          <ion-col size='3' style="text-align: center;">
-            <span><b>Código</b></span><br>
-            <span>#001</span>
-          </ion-col>
-  
-          <ion-col size='5' style="text-align: center;">
-            <span><b>Residencia</b></span><br>
-            <span>Bl02 - APT101</span>
-          </ion-col>
-  
-          <ion-col size='4' style="text-align: center;">
-            <span><b>Status</b></span><br>
-            <span>Pendente</span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-  
-      <br>
-      <hr>
-      <h3><b>Acompanhamento</b></h3>
-  
-      <form class="example-form">
-        <mat-form-field style="width: 100%;">
-          <mat-label>Comente Aqui</mat-label>
-          <textarea type="email" matInput style="height: 50px;" [errorStateMatcher]="matcher"
-            placeholder="Converse com o morador"></textarea>
-        </mat-form-field>
-      
-        <div class="anexo">
-          <!-- <ion-item type="button" lines="none" (click)="file.click()">
-            <span style="text-align: center;">Anexar Arquivos</span>
-          </ion-item> -->
-          <ion-button>Enviar Comentario</ion-button>
-          <input type="file" #file id="file" style="font-size: 13px !important">
-        </div>
-      </form>
-  
-      <br><br>
-      <h4><b>Ultimos Comentários</b></h4>
-  
-      <ion-card>
-        <ion-card-content > 
-          <span style="color: #7F2FF0; font-size: 13px;">Maicon Hugo</span><br>
-          <span style="font-size: 12px;">Aglomeração no apartamento 501</span><br>
-          <span style="font-size: 10px;">5 horas atrás</span><br>
-        </ion-card-content>
-      </ion-card>
-      
-    </mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title style="display: flex; align-items: center;">
+        <ion-icon src="../../assets/icon/setaoc.svg" style="font-size: 30px;"></ion-icon>
+        &nbsp;&nbsp;
+        <span style="font-size: 12px;">#001 - Excesso de Barulho</span>
+        <br>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <span style="color: #6200EE">Reclamação em 09/09/2021 às 21:00hrs</span>
+    <br>
+    <span style="color: #6200EE">Autor: Manoel Santos (bloco 02 - apt101)</span>
+    <br>
+    <span style="color: #6200EE; font-weight: 600">Tipo: Reclamação</span>
+    <br>
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col size='3' style="text-align: center;">
+          <span>
+            <b>Código</b>
+          </span>
+          <br>
+          <span>#001</span>
+        </ion-col>
+
+        <ion-col size='5' style="text-align: center;">
+          <span>
+            <b>Residencia</b>
+          </span>
+          <br>
+          <span>Bl02 - APT101</span>
+        </ion-col>
+
+        <ion-col size='4' style="text-align: center;">
+          <span>
+            <b>Status</b>
+          </span>
+          <br>
+          <span>Pendente</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <br>
+    <hr>
+    <h3>
+      <b>Acompanhamento</b>
+    </h3>
+
+    <form class="example-form">
+      <mat-form-field style="width: 100%;">
+        <mat-label>Comente Aqui</mat-label>
+        <textarea type="email" matInput style="height: 50px;" [errorStateMatcher]="matcher" placeholder="Converse com o morador"></textarea>
+      </mat-form-field>
+
+      <div class="anexo">
+        <br>
+        <ion-button (click)="file.click()">Anexar Arquivos</ion-button>
+        <br>
+        <br>
+        <ion-button>Enviar Comentario</ion-button>
+        <input type="file" #file id="file" style="font-size: 13px !important">
+      </div>
+    </form>
+
+    <br>
+    <br>
+    <h4>
+      <b>Ultimos Comentários</b>
+    </h4>
+
+    <ion-card>
+      <ion-card-content>
+        <span style="color: #7F2FF0; font-size: 13px;">Maicon Hugo</span>
+        <br>
+        <span style="font-size: 12px;">Aglomeração no apartamento 501</span>
+        <br>
+        <span style="font-size: 10px;">5 horas atrás</span>
+        <br>
+      </ion-card-content>
+    </ion-card>
+
+  </mat-expansion-panel>
 
 </ion-content>

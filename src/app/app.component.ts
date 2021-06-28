@@ -17,6 +17,8 @@ export class AppComponent {
     { title: 'Cadastrar Reclamações', url: 'cad-reclamacoes', src:"../../assets/icon/cad-recla.svg" },
     { title: 'Cadastrar Visitante', url: 'cad-visitante', src:"../../assets/icon/cad-visit.svg" },
     { title: 'Cadastrar Encomenda', url: 'cad-encomenda', icon: 'cube' },
+    { title: 'Visualizar Mudanças', url: 'visualizar-mudanca', icon: '' },
+    { title: 'Visualizar Sugestões', url: 'visualizar-sugestao', icon: 'bulb' },
   ];
   constructor(private authService: AutentiticacaoService,
               private router: Router,

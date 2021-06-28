@@ -14,7 +14,7 @@ export class CadReclamacoesPage implements OnInit {
 
   ngOnInit() {
     this.createForm();
-  }
+  } 
 
   createForm(){
     this.formulario = this.formBuilder.group({

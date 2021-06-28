@@ -75,6 +75,22 @@ const routes: Routes = [
     path: 'mudanca',
     loadChildren: () => import('./pages/mudanca/mudanca.module').then( m => m.MudancaPageModule)
   },
+  {
+    path: 'visualizar-mudanca',
+    loadChildren: () => import('./pages/visualizar-mudanca/visualizar-mudanca.module').then( m => m.VisualizarMudancaPageModule)
+  },
+  {
+    path: 'status-cad',
+    loadChildren: () => import('./pages/status-cad/status-cad.module').then( m => m.StatusCadPageModule)
+  },
+  {
+    path: 'cad-sugestao',
+    loadChildren: () => import('./pages/cad-sugestao/cad-sugestao.module').then( m => m.CadSugestaoPageModule)
+  },
+  {
+    path: 'visualizar-sugestao',
+    loadChildren: () => import('./pages/visualizar-sugestao/visualizar-sugestao.module').then( m => m.VisualizarSugestaoPageModule)
+  },
 
 
 
