@@ -24,3 +24,19 @@ ion-list{
         font-size: 15px;
     }
 }
+
+div.icones{
+    ion-icon{
+        float: right;
+        font-size: 30px;
+    }
+
+    span{
+        font-size: 16px;
+        position: relative;
+        top: 6px;
+        
+        color: #fff;
+        float: right;
+    }
+}

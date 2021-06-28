@@ -71,7 +71,11 @@ const routes: Routes = [
   {
     path: 'visualizar-encomenda',
     loadChildren: () => import('./pages/visualizar-encomenda/visualizar-encomenda.module').then( m => m.VisualizarEncomendaPageModule),  canActivate:[AutenticacaoGuard]
+  },  {
+    path: 'mudanca',
+    loadChildren: () => import('./pages/mudanca/mudanca.module').then( m => m.MudancaPageModule)
   },
+
 
 
 ];
