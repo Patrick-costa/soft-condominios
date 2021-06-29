@@ -2,8 +2,9 @@ import {Bairro} from "./bairro";
 
 export class Condominio{
     id: number 
+    cep: number
     rua: string
-    numero: string
+    numero: number
     bairro: Bairro
     nomeFantasia: string
     cnpj: string
