@@ -10,4 +10,5 @@ export class Pessoa{
     status: string;
     ocorrencia: Ocorrencia;
     usuario: Usuario;
+    linkFoto: string;
 }

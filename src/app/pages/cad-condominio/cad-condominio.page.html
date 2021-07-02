@@ -46,6 +46,12 @@
       </div>
 
       <div class="input-cadastro2">
+        <ion-label>Bairro</ion-label>
+        <ion-input type="text" placeholder="" value='{{dados.bairro}}' formControlName="bairro" name="bairro"
+          required readonly></ion-input>
+      </div>
+
+      <div class="input-cadastro2">
         <ion-label>Cidade</ion-label>
         <ion-input type="text" placeholder="" value='{{dados.localidade}}' formControlName="cidade" name="cidade"
           required readonly></ion-input>
@@ -69,7 +75,7 @@
         <ion-item type="button" lines="none" (click)="file.click()">
           <span>Clique aqui para fazer upload</span>
         </ion-item>
-        <input type="file" #file id="file" formControlName="arquivo" style="font-size: 13px !important"
+        <input type="file" #file id="file" formControlName="linkContrato" style="font-size: 13px !important"
           [(ngModel)]="files">
       </div>
 
@@ -78,7 +84,7 @@
         <ion-item type="button" lines="none" (click)="file.click()">
           <span>{{files}}</span>
         </ion-item>
-        <input type="file" #file id="file" formControlName="arquivo" style="font-size: 13px !important"
+        <input type="file" #file id="file" formControlName="linkContrato" style="font-size: 13px !important"
           [(ngModel)]="files">
       </div>
 

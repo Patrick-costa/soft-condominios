@@ -91,6 +91,10 @@ const routes: Routes = [
     path: 'visualizar-sugestao',
     loadChildren: () => import('./pages/visualizar-sugestao/visualizar-sugestao.module').then( m => m.VisualizarSugestaoPageModule)
   },
+  {
+    path: 'cad-colaborador',
+    loadChildren: () => import('./pages/cad-colaborador/cad-colaborador.module').then( m => m.CadColaboradorPageModule)
+  },
 
 
 

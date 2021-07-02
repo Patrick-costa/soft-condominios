@@ -3,4 +3,5 @@ import { Funcao } from './funcao';
 
 export class Colaborador extends Pessoa{
     funcao: Funcao
+    login: string
 }

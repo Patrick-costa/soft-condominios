@@ -19,6 +19,7 @@ export class AppComponent {
     { title: 'Cadastrar Encomenda', url: 'cad-encomenda', icon: 'cube' },
     { title: 'Visualizar Mudanças', url: 'visualizar-mudanca', icon: '' },
     { title: 'Visualizar Sugestões', url: 'visualizar-sugestao', icon: 'bulb' },
+    { title: 'Cadastrar Colaborador', url: 'cad-colaborador', icon: '' },
   ];
   constructor(private authService: AutentiticacaoService,
               private router: Router,

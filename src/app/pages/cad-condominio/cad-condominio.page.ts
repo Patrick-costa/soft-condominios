@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import {  Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Condominio } from '../../core/models/condominio';
 
 @Component({
   selector: 'app-cad-condominio',
@@ -17,9 +18,14 @@ export class CadCondominioPage implements OnInit {
   dados: any = [];
   cep: string = '';
   formulario: FormGroup;
+  condominio: Condominio = new Condominio();
 
   ngOnInit() {
     this.createForm();
+  }
+
+  cadastrar(){
+    
   }
 
   createForm(){
@@ -31,8 +37,9 @@ export class CadCondominioPage implements OnInit {
       rua: ['', Validators.required],
       cidade: ['', Validators.required],
       estado: ['', Validators.required],
+      bairro: ['', Validators.required],
       numero: ['', Validators.required],
-      arquivo: ['', Validators.required],
+      linkContrato: ['', Validators.required],
     });
   }
 
