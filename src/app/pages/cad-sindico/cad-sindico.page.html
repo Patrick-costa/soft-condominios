@@ -12,7 +12,7 @@
     <span>Sindico</span>
   </div>
 
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
     <div class="inputs">
       <div class="input-cadastro1">
         <ion-label>Nome</ion-label>
@@ -44,7 +44,7 @@
         <ion-input type="password" placeholder="" name="senha"></ion-input>
       </div>
 
-      <ion-button class="button-login">Cadastrar</ion-button>
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
   <br>

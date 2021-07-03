@@ -93,6 +93,7 @@ export class CadastroPage implements OnInit {
   }
 
   teste(){
+
     return this.http.get(`${environment.baseUrl}/condominios?bairro=`+ this.bairro).subscribe( x => {
       console.log(x);
     })
