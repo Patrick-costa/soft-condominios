@@ -24,12 +24,40 @@
       <div class="input-cadastro2">
         <ion-label>Sobrenome</ion-label>
         <ion-input type="text" placeholder="" formControlName="sobrenome" name="sobrenome" required></ion-input>
+      </div> 
+
+      <div class="input-cadastro2">
+        <ion-label>CPF</ion-label>
+        <ion-input type="text" placeholder="" formControlName="cpf" name="cpf" required></ion-input>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>E-mail</ion-label>
         <ion-input type="email" placeholder="" formControlName="email" name="email" required></ion-input>
       </div>
+
+      <div class="input-cadastro2">
+          <ion-label>CEP</ion-label>
+          <ion-input type="email" placeholder="" formControlName="cep" required (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep"></ion-input>
+        </div>
+
+        <div class="input-cadastro2">
+            <ion-label>Bairro</ion-label>
+            <ion-input type="text" placeholder="" value='{{dados.bairro}}' [(ngModel)]="bairro" formControlName="bairro" name="bairro"
+              required readonly></ion-input>
+          </div>
+    
+          <div class="input-cadastro2">
+            <ion-label>Cidade</ion-label>
+            <ion-input type="text" placeholder="" value='{{dados.localidade}}' [(ngModel)]="cidade" formControlName="cidade" name="cidade"
+              required readonly></ion-input>
+          </div>
+    
+          <div class="input-cadastro2">
+            <ion-label>Estado</ion-label>
+            <ion-input type="text" placeholder="" value='{{dados.uf}}' name="estado" [(ngModel)]="estado" formControlName="estado" required
+              readonly></ion-input>
+          </div>
 
       <div class="input-cadastro2">
         <ion-label>Condominio</ion-label>
@@ -58,7 +86,7 @@
         <ion-input type="password" placeholder="" name="senha" required></ion-input>
       </div>
 
-      <ion-button class="button-login">Cadastrar</ion-button>
+      <ion-button (click)="teste()" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
 

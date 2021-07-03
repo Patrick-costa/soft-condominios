@@ -33,18 +33,17 @@ export class CadColaboradorPage implements OnInit {
       sobrenome: this.formulario.get('sobrenome').value,
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
-      funcao: this.formulario.get('email').value,
+      funcao: this.formulario.get('funcao').value,
       linkFoto: null,
-      ocorrencia: null,
-      id: null,
       status: null,
-      usuario: null,
-      login: this.formulario.get('email').value,
+      senha: this.formulario.get('senha').value,
+      login: this.formulario.get('email').value
     };
 
     try{
       await this.presentLoading();
-      this.colaboradorService.cadastrarColaborador(this.formulario.value)
+      console.log(this.colaborador)
+      this.colaboradorService.cadastrarColaborador(this.colaborador)
         .subscribe(complete => {
           console.log(complete.status);
           return this.presentToastSuccess(); 

@@ -1,13 +1,16 @@
 import {Bairro} from "./bairro";
+import {Cidade} from "./cidade";
+import {Estado} from "./estado";
 
 export class Condominio{
-    id: number 
-    cep: number
+    cep: string
     rua: string
-    numero: number
-    bairro: Bairro
+    numero: string
+    cidade: string
+    bairro: string
+    estado: string
     nomeFantasia: string
     cnpj: string
-    linkContratoSocial: string
+    linkContrato: string
     razaoSocial: string
 }

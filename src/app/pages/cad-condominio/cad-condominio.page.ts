@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { AlertController } from '@ionic/angular';
-import {  Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AlertController, ToastController, LoadingController } from '@ionic/angular';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Condominio } from '../../core/models/condominio';
+import { CondominioService } from '../../share/utils/services/condominio.service';
 
 @Component({
   selector: 'app-cad-condominio',
@@ -10,25 +11,85 @@ import { Condominio } from '../../core/models/condominio';
   styleUrls: ['./cad-condominio.page.scss'],
 })
 export class CadCondominioPage implements OnInit {
- 
+
   constructor(private http: HttpClient,
-              private alertControl: AlertController,
-              private formBuilder: FormBuilder) { }
+    private alertControl: AlertController,
+    private formBuilder: FormBuilder,
+    private condominioService: CondominioService,
+    private toastController: ToastController,
+    private loadingController: LoadingController) { }
 
   dados: any = [];
   cep: string = '';
   formulario: FormGroup;
   condominio: Condominio = new Condominio();
+  private loading: any;
 
   ngOnInit() {
     this.createForm();
   }
 
-  cadastrar(){
+  async cadastrar() {
+    const cep: string = this.formulario.get('cep').value
     
+    this.condominio = {
+      bairro: this.formulario.get('bairro').value,
+      cep: this.dados['cep'],
+      cnpj: this.formulario.get('cnpj').value,
+      cidade: this.formulario.get('cidade').value,
+      estado: this.formulario.get('estado').value,
+      linkContrato: null,
+      nomeFantasia: this.formulario.get('nomeFantasia').value,
+      numero: this.formulario.get('numero').value,
+      razaoSocial: this.formulario.get('razaoSocial').value,
+      rua: this.formulario.get('rua').value,
+    }
+
+    console.log(this.condominio);
+    try {
+      await this.presentLoading();
+      this.condominioService.cadastrarCondominio(this.condominio)
+        .subscribe(complete => {
+          console.log(complete.status);
+          return this.presentToastSuccess();
+
+        }, error => {
+          console.log(error);
+          let message: string
+          let color: string
+          switch (error.status) {
+            case 500:
+              message = 'Erro ao inserir';
+              color = 'danger';
+              break;
+
+            case 403:
+              message = 'Dados Inválidos';
+              color = 'danger';
+              break;
+
+            case 404:
+              message = 'Servidor não encontrado';
+              color = 'danger';
+              break;
+
+            case 408:
+              message = 'Tempo de conexão esgotado';
+              color = 'danger';
+              break;
+          }
+
+          this.presentToast(message, color);
+        })
+
+    }
+    finally {
+      this.loading.dismiss();
+
+    }
   }
 
-  createForm(){
+  createForm() {
     this.formulario = this.formBuilder.group({
       razaoSocial: ['', Validators.required],
       nomeFantasia: ['', Validators.required],
@@ -41,6 +102,33 @@ export class CadCondominioPage implements OnInit {
       numero: ['', Validators.required],
       linkContrato: ['', Validators.required],
     });
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingController.create({
+      message: 'Carregando...'
+    });
+
+    return this.loading.present();
+
+  }
+
+  async presentToast(message, color) {
+    const toast = await this.toastController.create({
+      message,
+      color,
+      duration: 3000
+    });
+    toast.present();
+  }
+
+  async presentToastSuccess() {
+    const toast = await this.toastController.create({
+      message: 'Cadastrado com Sucesso!',
+      color: 'success',
+      duration: 3000
+    });
+    toast.present();
   }
 
   async consultaCEP(cep) {
@@ -77,7 +165,7 @@ export class CadCondominioPage implements OnInit {
         })
 
         await alert.present();
-        
+
       }
     }
 

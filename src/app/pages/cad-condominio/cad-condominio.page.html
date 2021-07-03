@@ -14,7 +14,7 @@
     <span>Condominio</span>
   </div>
 
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
     <div class="inputs">
 
       <div class="input-cadastro2">
@@ -59,7 +59,7 @@
 
       <div class="input-cadastro2">
         <ion-label>Estado</ion-label>
-        <ion-input type="text" placeholder="" value='{{dados.bairro}}' name="estado" formControlName="estado" required
+        <ion-input type="text" placeholder="" value='{{dados.uf}}' name="estado" formControlName="estado" required
           readonly></ion-input>
       </div>
 
@@ -90,7 +90,7 @@
 
       <!-- ###################################FIM DA CONDIÇÃO############################################## -->
 
-      <ion-button class="button-login">Cadastrar</ion-button>
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
   <br>
