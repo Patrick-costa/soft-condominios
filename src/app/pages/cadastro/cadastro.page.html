@@ -18,45 +18,45 @@
     <div class="inputs">
       <div class="input-cadastro1">
         <ion-label>Nome</ion-label>
-        <ion-input type="text" placeholder="" formControlName="nome" name="nome" required></ion-input>
+        <input type="text" placeholder="" formControlName="nome" name="nome" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Sobrenome</ion-label>
-        <ion-input type="text" placeholder="" formControlName="sobrenome" name="sobrenome" required></ion-input>
+        <input type="text" placeholder="" formControlName="sobrenome" name="sobrenome" required>
       </div> 
 
       <div class="input-cadastro2">
         <ion-label>CPF</ion-label>
-        <ion-input type="text" placeholder="" formControlName="cpf" name="cpf" required></ion-input>
+        <input type="text" placeholder="" formControlName="cpf" name="cpf" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>E-mail</ion-label>
-        <ion-input type="email" placeholder="" formControlName="email" name="email" required></ion-input>
+        <input type="email" placeholder="" formControlName="email" name="email" required>
       </div>
 
       <div class="input-cadastro2">
           <ion-label>CEP</ion-label>
-          <ion-input type="email" placeholder="" formControlName="cep" required (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep"></ion-input>
+          <input type="email" placeholder="" formControlName="cep" required (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
         </div>
 
         <div class="input-cadastro2">
             <ion-label>Bairro</ion-label>
-            <ion-input type="text" placeholder="" value='{{dados.bairro}}' [(ngModel)]="bairro" formControlName="bairro" name="bairro"
-              required readonly></ion-input>
+            <input type="text" placeholder="" value='{{dados.bairro}}' [(ngModel)]="bairro" formControlName="bairro" name="bairro"
+              required readonly>
           </div>
     
           <div class="input-cadastro2">
             <ion-label>Cidade</ion-label>
-            <ion-input type="text" placeholder="" value='{{dados.localidade}}' [(ngModel)]="cidade" formControlName="cidade" name="cidade"
-              required readonly></ion-input>
+            <input type="text" placeholder="" value='{{dados.localidade}}' [(ngModel)]="cidade" formControlName="cidade" name="cidade"
+              required readonly>
           </div>
     
           <div class="input-cadastro2">
             <ion-label>Estado</ion-label>
-            <ion-input type="text" placeholder="" value='{{dados.uf}}' name="estado" [(ngModel)]="estado" formControlName="estado" required
-              readonly></ion-input>
+            <input type="text" placeholder="" value='{{dados.uf}}' name="estado" [(ngModel)]="estado" formControlName="estado" required
+              readonly>
           </div>
 
       <div class="input-cadastro2">
@@ -68,22 +68,22 @@
 
       <div class="input-cadastro2">
         <ion-label>Bloco</ion-label>
-        <ion-input type="text" placeholder="" formControlName="bloco" name="bloco"></ion-input>
+        <input type="text" placeholder="" formControlName="bloco" name="bloco">
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Apartamento</ion-label>
-        <ion-input type="number" placeholder="" formControlName="apartamento" name="apartamento" required></ion-input>
+        <input type="number" placeholder="" formControlName="apartamento" name="apartamento" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Senha</ion-label>
-        <ion-input type="password" placeholder="" formControlName="senha" name="senha" required></ion-input>
+        <input type="password" placeholder="" formControlName="senha" name="senha" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Confirmar Senha</ion-label>
-        <ion-input type="password" placeholder="" name="senha" required></ion-input>
+        <input type="password" placeholder="" name="senha" required>
       </div>
 
       <ion-button (click)="teste()" class="button-login">Cadastrar</ion-button>

@@ -19,53 +19,53 @@
 
       <div class="input-cadastro2">
         <ion-label>Razão Social</ion-label>
-        <ion-input type="text" placeholder="" formControlName="razaoSocial" name="razaoSocial" required></ion-input>
+        <input type="text" placeholder="" formControlName="razaoSocial" name="razaoSocial" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Nome Fantasia</ion-label>
-        <ion-input type="text" placeholder="" formControlName="nomeFantasia" name="nomeFantasia"></ion-input>
+        <input type="text" placeholder="" formControlName="nomeFantasia" name="nomeFantasia">
       </div>
 
       <div class="input-cadastro2">
         <ion-label>CNPJ</ion-label>
-        <ion-input type="text" placeholder="" formControlName="cnpj" name="cnpj"></ion-input>
+        <input type="text" placeholder="" formControlName="cnpj" name="cnpj">
       </div>
 
 
       <div class="input-cadastro2">
         <ion-label>CEP</ion-label>
-        <ion-input type="text" placeholder="" name="cep" formControlName="cep" required
-          (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep"></ion-input>
+        <input type="text" placeholder="" name="cep" formControlName="cep" required
+          (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Rua</ion-label>
-        <ion-input type="text" placeholder="" value='{{dados.logradouro}}' formControlName="rua" name="rua" readonly>
-        </ion-input>
+        <input type="text" placeholder="" value='{{dados.logradouro}}' formControlName="rua" name="rua" readonly>
+        
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Bairro</ion-label>
-        <ion-input type="text" placeholder="" value='{{dados.bairro}}' formControlName="bairro" name="bairro"
-          required readonly></ion-input>
+        <input type="text" placeholder="" value='{{dados.bairro}}' formControlName="bairro" name="bairro"
+          required readonly>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Cidade</ion-label>
-        <ion-input type="text" placeholder="" value='{{dados.localidade}}' formControlName="cidade" name="cidade"
-          required readonly></ion-input>
+        <input type="text" placeholder="" value='{{dados.localidade}}' formControlName="cidade" name="cidade"
+          required readonly>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Estado</ion-label>
-        <ion-input type="text" placeholder="" value='{{dados.uf}}' name="estado" formControlName="estado" required
-          readonly></ion-input>
+        <input type="text" placeholder="" value='{{dados.uf}}' name="estado" formControlName="estado" required
+          readonly>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Número</ion-label>
-        <ion-input type="text" placeholder="" name="numero" formControlName="numero" required></ion-input>
+        <input type="text" placeholder="" name="numero" formControlName="numero" required>
       </div>
 
       <!-- #################################CONDIÇÃO PARA EXIBIR NOME DO ARQUIVO################################## -->
