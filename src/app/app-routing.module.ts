@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'cad-condominio',
-    loadChildren: () => import('./pages/cad-condominio/cad-condominio.module').then( m => m.CadCondominioPageModule),  canActivate:[AutenticacaoGuard]
+    loadChildren: () => import('./pages/cad-condominio/cad-condominio.module').then( m => m.CadCondominioPageModule), 
   },
   {
     path: 'documentos',
@@ -71,7 +71,8 @@ const routes: Routes = [
   {
     path: 'visualizar-encomenda',
     loadChildren: () => import('./pages/visualizar-encomenda/visualizar-encomenda.module').then( m => m.VisualizarEncomendaPageModule),  canActivate:[AutenticacaoGuard]
-  },  {
+  },
+  {
     path: 'mudanca',
     loadChildren: () => import('./pages/mudanca/mudanca.module').then( m => m.MudancaPageModule)
   },

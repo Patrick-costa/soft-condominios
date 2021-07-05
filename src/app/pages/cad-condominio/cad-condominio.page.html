@@ -36,7 +36,7 @@
       <div class="input-cadastro2">
         <ion-label>CEP</ion-label>
         <input type="text" placeholder="" name="cep" formControlName="cep" required
-          (ionBlur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
+          (blur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
       </div>
 
       <div class="input-cadastro2">
