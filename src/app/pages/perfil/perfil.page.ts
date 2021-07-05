@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient,) { }
+  usuario: string = localStorage.getItem('localUser');
+  dados: any = []
 
   ngOnInit() {
+    this.getUser();
+  }
+
+  getUser(){
+    let user = JSON.parse(this.usuario);
+    console.log(user['nome']);
+    this.http.get(`${environment.baseUrl}/moradores/search?email=`+ user['nome']).subscribe( x => {
+      this.dados = x['content'];
+      console.log(this.dados);
+    })
   }
 
 }
