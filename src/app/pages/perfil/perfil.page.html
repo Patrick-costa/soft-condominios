@@ -11,52 +11,65 @@
   <div>
     <ion-img src="../assets/img/perfil-soft.svg"></ion-img>
     <center>
-      <h3 style="font-size: 20px;"><br>Perfil</h3>
+      <h3 style="font-size: 20px;">
+        <br>Perfil</h3>
       <span class="login-cardapp">Minha Conta</span>
     </center>
     <br>
     <div>
-      <span class="info">Nome</span><br>
-      <span class="info-bd">Patrick Araujo</span><br>
+      <span class="info">Nome</span>
+      <br>
+      <span class="info-bd" style="text-transform: capitalize">
+        {{dados.nome}} {{dados.sobrenome}}
+      </span>
+      <br>
     </div>
 
     <div>
-      <span class="info">Condominio</span><br>
-      <span class="info-bd">Uba Pendotiba</span><br>
+      <span class="info">Condominio</span>
+      <br>
+      <span class="info-bd" style="text-transform: capitalize">{{condominio.nomeFantazia}}</span>
+      <br>
     </div>
 
     <div>
-      <span class="info">Apartamento</span><br>
-      <span class="info-bd">1003</span><br>
+      <span class="info">Apartamento</span>
+      <br>
+      <span class="info-bd">{{dados.apartamento}}</span>
+      <br>
     </div>
 
-    <div>
-      <span class="info">Bloco:</span><br>
-      <span class="info-bd">01</span><br>
+    <div *ngIf="dados.bloco != 0">
+      <span class="info">Bloco:</span>
+      <br>
+      <span class="info-bd">{{dados.bloco}}</span>
+      <br>
     </div>
 
 
   </div>
   <br>
   <div>
-    <span class="info-senha">Alterar Senha</span><br>
+    <span class="info-senha">Alterar Senha</span>
+    <br>
   </div>
 
   <ion-list lines="none" style="width: 90%; margin: 0 auto">
     <ion-item>
-      <input class="input-login" type="password" placeholder="Senha Atual">
+      <input class="input-login" type="password" placeholder="Senha Atual" style="width: 100%;">
     </ion-item>
     <ion-item>
-      <input class="input-login" type="password" placeholder="Nova Senha">
+      <input class="input-login" type="password" placeholder="Nova Senha" style="width: 100%;">
     </ion-item>
     <ion-item>
-      <input class="input-login" type="password" placeholder="Confirmar Senha">
+      <input class="input-login" type="password" placeholder="Confirmar Senha" style="width: 100%;">
     </ion-item>
     <center>
       <ion-button class="buton" (click)="redefinirSenha()">Alterar</ion-button>
     </center>
   </ion-list>
-  <br><br><br>
-
+  <br>
+  <br>
+  <br>
 
 </ion-content>

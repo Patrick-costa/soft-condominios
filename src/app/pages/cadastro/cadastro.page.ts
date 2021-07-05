@@ -102,8 +102,6 @@ export class CadastroPage implements OnInit {
       this.loading.dismiss();
 
     }
-
-
   }
 
   createForm(){

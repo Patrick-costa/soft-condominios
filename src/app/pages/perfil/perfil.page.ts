@@ -10,19 +10,38 @@ import { environment } from '../../../environments/environment';
 export class PerfilPage implements OnInit {
 
   constructor(private http: HttpClient,) { }
-  usuario: string = localStorage.getItem('localUser');
-  dados: any = []
+  dados: any = [];
+  condominio: any = []
 
+  ionViewWillEnter(){
+  }
+  
   ngOnInit() {
     this.getUser();
   }
 
-  getUser(){
-    let user = JSON.parse(this.usuario);
-    console.log(user['nome']);
-    this.http.get(`${environment.baseUrl}/moradores/search?email=`+ user['nome']).subscribe( x => {
-      this.dados = x['content'];
+  // getUser(){
+  //   this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe( x => {
+  //     let dados = JSON.stringify(x);
+  //     let usuario = dados;
+  //     this.dados = JSON.parse(usuario);
+  //     console.log(this.dados);
+
+  //     this.condominio = this.dados['condominio'];
+  //   })
+  // }
+
+  getUser() {
+    this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe(x => {
+      let dados = JSON.stringify(x);
+      let usuario = dados;
+      this.dados = JSON.parse(usuario);
       console.log(this.dados);
+      if(this.dados['funcao']){
+        this.condominio = this.dados.condominio[0];
+      } else{
+        this.condominio = this.dados['condominio'];
+      }
     })
   }
 
