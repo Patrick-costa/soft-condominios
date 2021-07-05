@@ -78,12 +78,13 @@
 
       <div class="input-cadastro2">
         <ion-label>Senha</ion-label>
-        <input type="password" placeholder="" formControlName="senha" name="senha" required>
+        <input type="password" placeholder="" formControlName="senha" [(ngModel)]="senha" name="senha" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Confirmar Senha</ion-label>
-        <input type="password" placeholder="" name="senha" required>
+        <input type="password" placeholder="" [(ngModel)]="confirmarSenha" formControlName="confirmar_senha" (blur)="apagarSenha()"required>
+        <span *ngIf="senha != confirmarSenha" style="color: red; font-weight: 600;">*Senhas não conferem</span>
       </div>
 
       <ion-button (click)="teste()" class="button-login">Cadastrar</ion-button>

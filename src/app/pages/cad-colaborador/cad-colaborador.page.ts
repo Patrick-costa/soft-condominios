@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { ColaboradorService } from '../../share/utils/services/colaborador.service';
 import { Router } from '@angular/router';
 import { Colaborador } from '../../core/models/colaborador';
-import { ToastController, LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cad-colaborador',
@@ -16,16 +16,27 @@ export class CadColaboradorPage implements OnInit {
               private colaboradorService: ColaboradorService,
               private router: Router,
               private toastController: ToastController,
-              private loadingController: LoadingController
+              private loadingController: LoadingController,
+              private alertController: AlertController
                ) { }
 
-  formulario: FormGroup
+  formulario: FormGroup;
+  senha: string;
+  confirmarSenha: string;
   colaborador: Colaborador = new Colaborador();
   private loading: any;
 
   ngOnInit() {
     this.createForm();
   }
+
+  checkPasswords(group: FormControl) {
+    let pass = group.get("senha").value;
+    let confirmPass = group.get("confirmar_senha").value;
+
+    return pass === confirmPass ? null : { notSame: true }
+  }
+
 
   async cadastrar() {
     this.colaborador = {
@@ -85,12 +96,19 @@ export class CadColaboradorPage implements OnInit {
 
   }
 
+ apagarSenha(){
+    if(this.senha != this.confirmarSenha){
+      return this.alertControl();
+    }
+  }
+
   createForm() {
     this.formulario = this.formBuilder.group({
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],
       email: ['', Validators.required],
-      cpf: [''],
+      cpf: ['', Validators.required],
+      confirmar_senha: ['', Validators.required],
       funcao: ['', Validators.required],
       senha: ['', Validators.required],
     });
@@ -104,6 +122,22 @@ export class CadColaboradorPage implements OnInit {
     return this.loading.present();
 
   }
+
+  async alertControl(){
+    const alert = await this.alertController.create({
+      message: 'Senhas não conferem, favor digite novamente',
+      buttons: [{
+        'text': 'Ok',
+        handler: () => {
+          this.senha = "";
+          this.confirmarSenha = "";
+        }
+      }]
+    });
+
+    return alert.present();
+  }
+
 
   async presentToast(message,color){
     const toast = await this.toastController.create({

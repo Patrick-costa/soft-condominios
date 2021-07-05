@@ -19,7 +19,8 @@ export class CadastroPage implements OnInit {
               private loadingController: LoadingController,
               private toastController: ToastController,
               private http: HttpClient,
-              private alertControl: AlertController) { }
+              private alertControl: AlertController,
+              ) { }
 
   formulario: FormGroup;
   dados: any = [];
@@ -27,11 +28,19 @@ export class CadastroPage implements OnInit {
   bairro: string;
   cidade: string;
   estado: string;
+  senha: string;
+  confirmarSenha: string;
   private loading: any;
   morador: MoradorCadastro = new MoradorCadastro();
 
   ngOnInit() {
     this.createForm();
+  }
+
+  apagarSenha(){
+    if(this.senha != this.confirmarSenha){
+      return this.alertControlSenha();
+    }
   }
 
   async cadastrar(){
@@ -113,7 +122,8 @@ export class CadastroPage implements OnInit {
       condominio: ['', Validators.required],
       bloco: [''],
       apartamento: ['', Validators.required],
-      senha: ['', Validators.required]
+      senha: ['', Validators.required],
+      confirmar_senha: ['', Validators.required]
     });
   }
 
@@ -142,6 +152,22 @@ export class CadastroPage implements OnInit {
       duration: 3000
     });
     toast.present();
+  }
+
+  async alertControlSenha(){
+    const alert = await this.alertControl.create({
+      message: 'Senhas não conferem, favor digite novamente',
+      buttons: [{
+        'text': 'Ok',
+        handler: () => {
+          this.senha = "";
+          this.confirmarSenha = "";
+        }
+      }]
+    });
+
+    return alert.present();
+
   }
 
   async consultaCEP(cep) {

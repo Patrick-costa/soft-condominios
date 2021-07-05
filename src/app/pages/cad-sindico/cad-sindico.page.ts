@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { SindicoService } from '../../share/utils/services/sindico.service';
 import { Router } from '@angular/router';
 import { Colaborador } from '../../core/models/colaborador';
-import { ToastController, LoadingController } from '@ionic/angular';
+import { ToastController, LoadingController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cad-sindico',
@@ -16,15 +16,39 @@ export class CadSindicoPage implements OnInit {
     private sindicoService: SindicoService,
     private router: Router,
     private toastController: ToastController,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    private alertController: AlertController
   ) { }
 
   formulario: FormGroup
   sindico: Colaborador = new Colaborador();
   private loading: any;
+  senha: string;
+  confirmarSenha: string;
 
   ngOnInit() {
     this.createForm();
+  }
+
+  apagarSenha() {
+    if (this.senha != this.confirmarSenha) {
+      return this.alertControl();
+    }
+  }
+
+  async alertControl() {
+    const alert = await this.alertController.create({
+      message: 'Senhas não conferem, favor digite novamente',
+      buttons: [{
+        'text': 'Ok',
+        handler: () => {
+          this.senha = "";
+          this.confirmarSenha = "";
+        }
+      }]
+    });
+
+    return alert.present();
   }
 
   async cadastrar() {
@@ -92,7 +116,8 @@ export class CadSindicoPage implements OnInit {
       sobrenome: ['', Validators.required],
       cpf: ['', Validators.required],
       email: ['', Validators.required],
-      senha: ['', Validators.required]
+      senha: ['', Validators.required],
+      confirmar_senha: ['', Validators.required]
     });
   }
 
