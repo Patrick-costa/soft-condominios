@@ -26,7 +26,7 @@
 
       <div class="input-cadastro2">
         <ion-label>CPF</ion-label>
-        <input type="text" placeholder="" formControlName="cpf" name="cpf" required>
+        <input type="text" placeholder="" [brmasker]="{mask:'000.000.000-00', len:14, userCaracters: true}" formControlName="cpf" name="cpf" required>
       </div>
 
       <div class="input-cadastro2">

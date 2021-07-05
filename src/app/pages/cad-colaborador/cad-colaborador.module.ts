@@ -8,10 +8,13 @@ import { CadColaboradorPageRoutingModule } from './cad-colaborador-routing.modul
 
 import { CadColaboradorPage } from './cad-colaborador.page';
 
+import { BrMaskerModule } from 'br-mask';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    BrMaskerModule,
     ReactiveFormsModule,
     IonicModule,
     CadColaboradorPageRoutingModule

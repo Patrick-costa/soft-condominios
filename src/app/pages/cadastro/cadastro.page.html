@@ -28,7 +28,7 @@
 
       <div class="input-cadastro2">
         <ion-label>CPF</ion-label>
-        <input type="text" placeholder="" formControlName="cpf" name="cpf" required>
+        <input type="text" placeholder="" formControlName="cpf" [brmasker]="{mask:'000.000.000-00', len:14, userCaracters: true}" name="cpf" required>
       </div>
 
       <div class="input-cadastro2">
@@ -38,7 +38,8 @@
 
       <div class="input-cadastro2">
           <ion-label>CEP</ion-label>
-          <input type="email" placeholder="" formControlName="cep" required (blur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
+          <input type="email" [brmasker]="{mask:'00000-000', len:9, userCaracters: true}"
+           placeholder="" formControlName="cep" required (blur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
         </div>
 
         <div class="input-cadastro2">

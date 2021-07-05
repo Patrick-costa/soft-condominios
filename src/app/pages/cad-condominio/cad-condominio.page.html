@@ -29,13 +29,13 @@
 
       <div class="input-cadastro2">
         <ion-label>CNPJ</ion-label>
-        <input type="text" placeholder="" formControlName="cnpj" name="cnpj">
+        <input type="text" [brmasker]="{mask:'00.000.000/0000-00', len:18, userCaracters: false}" placeholder="" formControlName="cnpj" name="cnpj">
       </div>
 
 
       <div class="input-cadastro2">
         <ion-label>CEP</ion-label>
-        <input type="text" placeholder="" name="cep" formControlName="cep" required
+        <input type="text" [brmasker]="{mask:'00000-000', len:9, userCaracters: true}" placeholder="" name="cep" formControlName="cep" required
           (blur)="consultaCEP($event.target.value)" [(ngModel)]="cep">
       </div>
 

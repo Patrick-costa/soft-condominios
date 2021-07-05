@@ -7,16 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { CadCondominioPageRoutingModule } from './cad-condominio-routing.module';
 
 import { CadCondominioPage } from './cad-condominio.page';
-import { NgxMaskIonicModule } from 'ngx-mask-ionic';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    BrMaskerModule,
     ReactiveFormsModule,
     IonicModule,
     CadCondominioPageRoutingModule,
-    NgxMaskIonicModule.forChild()
   ],
   declarations: [CadCondominioPage]
 })
