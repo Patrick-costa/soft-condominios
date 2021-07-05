@@ -8,19 +8,15 @@ input:focus {
     box-shadow: 0 0 2px #5231A1;
 }
 
-
 div.logo-header{
     width: 95%;
     min-height: 150px;
     margin: 0 auto;
     margin-top: 10px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 
-    ion-icon{
-        font-size: 200px !important;
+    img{
+        width: 60%;
     }
 
     span{
@@ -33,26 +29,22 @@ div.logo-header{
 
 div.inputs{
     width: 90%;
-    border-radius: 5px;
     margin: 0 auto;
 }
 
 div.inputs{
-    div.input-login{
+    div.input-cadastro1{
         input{
             width: 100%;
             border: 1px solid #666666;
             border-radius: 5px;
-            height: 50px;
-            width: 100%;
-            margin: 0 auto;
-            margin-top: 20px;
+            height: 55px;
         }
-        
+    
         ion-label{
             background: #fff;
             position: relative;
-            top: 30px;
+            top: 10px;
             left: 16px;
             color: #8b8b8b;
             font-family: inherit;
@@ -60,16 +52,14 @@ div.inputs{
         }
     }
 
-    div.input-senha{
+    div.input-cadastro2{
         margin-top: 20px;
 
         input{
             width: 100%;
             border: 1px solid #666666;
             border-radius: 5px;
-            height: 50px;
-            width: 100%;
-            margin: 0 auto;
+            height: 55px;
         }
     
         ion-label{
@@ -82,13 +72,10 @@ div.inputs{
             z-index: 999;
         }
 
-        ion-icon{
-            font-size: 28px;
-            color: #666666;
-            position: relative;
-            bottom: 38px;
-            float: right;
-            right: 15px;
+        ion-select{
+            border: 1px solid #666666;
+            border-radius: 5px;
+            height: 55px;  
         }
     }
 
@@ -96,7 +83,7 @@ div.inputs{
         margin-top: 15px;
         float: right;
         font-size: 13px;
-        color: #666666
+        color: #000;
     }
 
     ion-button{
@@ -105,8 +92,7 @@ div.inputs{
         font-size: 15px;
         letter-spacing: 1px;
         width: 100%;
-        margin: 0 auto;
         --border-radius: 5px;
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }

@@ -95,6 +95,10 @@ const routes: Routes = [
     path: 'cad-colaborador',
     loadChildren: () => import('./pages/cad-colaborador/cad-colaborador.module').then( m => m.CadColaboradorPageModule)
   },
+  {
+    path: 'esqueci-senha',
+    loadChildren: () => import('./pages/esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
+  },
 
 
 

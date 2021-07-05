@@ -1,10 +1,9 @@
 <ion-content>
-  <ion-header class="ion-no-border">
-    <ion-toolbar lines='none'></ion-toolbar>
-  </ion-header>
 
   <div class="logo-header">
     <ion-icon src="../../assets/img/logo.svg"></ion-icon>
+    <h1 style="color: #5231A1;">Soft Condominios</h1>
+    <span>Login</span>
   </div>
 
   <form [formGroup]="formulario" (ngSubmit)="logar()">
@@ -21,7 +20,7 @@
       </div>
 
       <div class="esqueci-senha">
-        <ion-label> Esqueci minha senha </ion-label>
+        <ion-label routerLink="/esqueci-senha"> Esqueci minha senha </ion-label>
       </div>
 
       <center>
@@ -29,4 +28,11 @@
       </center>
     </div>
   </form>
+  
+  <ion-footer style="position: absolute; bottom: 0">
+    <ion-toolbar style="text-align: center;--background: #5231A1; color: #fff" routerLink="/cadastro">
+      <ion-label>Você é morador ? Clique aqui e cadastre-se</ion-label> 
+    </ion-toolbar>
+  </ion-footer>
+
 </ion-content>
