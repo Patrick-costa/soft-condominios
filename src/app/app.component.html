@@ -15,87 +15,107 @@
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="perfil" lines="none"
               detail="false" routerLinkActive="selected">
-              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/perfil-1.svg" ></ion-icon>
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/perfil-1.svg"></ion-icon>
               <ion-label>Perfil</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-mudanca" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-mudanca"
+              lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/mudanca-branco.svg"></ion-icon>
               <ion-label>Visualizar Mudanças</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-sugestao" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-sugestao"
+              *ngIf='funcao == "Sindico" || funcao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" name="bulb"></ion-icon>
               <ion-label>Visualizar Sugestões</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-doc" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-doc"
+              lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/doc-branco.svg"></ion-icon>
               <ion-label>Visualizar Documentos</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-sindico" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-visitante"
+              *ngIf='funcao == "Sindico" || funcao == "Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/visitante-branco.svg"></ion-icon>
+              <ion-label>Visualizar Visitantes</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-visitante"
+              *ngIf='funcao != "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/entrega-branco.svg"></ion-icon>
+              <ion-label>Visualizar Encomendas</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-ocorrencia"
+              *ngIf='funcao == "Sindico" || funcao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/ocorrencia-branco.svg"></ion-icon>
+              <ion-label>Visualizar Ocorrencias</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-sindico"
+              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/sind.svg"></ion-icon>
               <ion-label>Cadastrar Sindico</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-condominio" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-condominio"
+              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/predio.svg"></ion-icon>
               <ion-label>Cadastrar Condominio</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cadastro" lines="none"
-              detail="false" routerLinkActive="selected">
-              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-morador-branco.svg"></ion-icon>
-              <ion-label>Cadastrar Morador</ion-label>
-            </ion-item>
-
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="documentos" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="documentos"
+              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/baixar-doc.svg"></ion-icon>
               <ion-label>Cadastrar Documentos</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-reclamacoes" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-reclamacoes"
+              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-recla.svg"></ion-icon>
               <ion-label>Cadastrar Ocorrencias</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-visitante" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-visitante"
+            *ngIf='funcao == "Sindico" || funcao == "Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-visit.svg"></ion-icon>
               <ion-label>Cadastrar Visitante</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-encomenda" lines="none"
-              detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-encomenda"
+              *ngIf='funcao == " Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" name="cube"></ion-icon>
               <ion-label>Cadastrar Encomenda</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-colaborador" lines="none"
-              detail="false" routerLinkActive="selected">
-              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-morador-branco.svg" ></ion-icon>
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-colaborador"
+              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-morador-branco.svg"></ion-icon>
               <ion-label>Cadastrar Colaborador</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="folder" lines="none"
-              detail="false" routerLinkActive="selected">
-              <ion-icon style="color: #fff" slot="start" name="home"></ion-icon>
-              <ion-label>Inicio</ion-label>
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-informativo"
+              *ngIf='funcao == "Sindico" || funcao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/informativo-branco.svg"></ion-icon>
+              <ion-label>Cadastrar Informativos</ion-label>
             </ion-item>
+
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="mudanca"
+              lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" src="../../assets/icon/mudanca-branco.svg"></ion-icon>
+              <ion-label>Cadastrar Mudanças</ion-label>
+            </ion-item>
+
+            <ion-item (click)="logout()" lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-sugestao"
+              lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon style="color: #fff" slot="start" name="log-out"></ion-icon>
+              <ion-label>Logoff</ion-label>
+            </ion-item>
+
           </ion-menu-toggle>
-          <ion-item lines="none" detail="false" (click)="logout()" style="--background: #5231A1 !important; color: #fff" lines="none"
-            detail="false" routerLinkActive="selected">
-            <ion-icon name="log-out" size="large" style="color: #fff"></ion-icon>
-            <ion-label>&nbsp;&nbsp;&nbsp;Logout</ion-label>
-          </ion-item>
 
         </ion-list>
 
