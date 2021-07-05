@@ -13,7 +13,7 @@
     <span>Moradores</span>
   </div>
 
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
 
     <div class="inputs">
       <div class="input-cadastro1">
@@ -62,7 +62,7 @@
       <div class="input-cadastro2">
         <ion-label>Condominio</ion-label>
         <ion-select formControlName="condominio">
-          <ion-select-option></ion-select-option>
+          <ion-select-option *ngFor="let condominios of condominio" value="{{condominios.id}}">{{condominios.nomeFantazia}}</ion-select-option>
         </ion-select>
       </div>
 
@@ -87,7 +87,7 @@
         <span *ngIf="senha != confirmarSenha" style="color: red; font-weight: 600;">*Senhas não conferem</span>
       </div>
 
-      <ion-button (click)="teste()" class="button-login">Cadastrar</ion-button>
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
 

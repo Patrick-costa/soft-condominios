@@ -54,10 +54,10 @@
         <input type="password" placeholder="" [(ngModel)]="confirmarSenha" (blur)="apagarSenha()" formControlName="confirmar_senha" name="confirmar_senha" required>
         <span *ngIf="senha != confirmarSenha" style="color: red; font-weight: 600;">*Senhas não conferem</span>
       </div>
-
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
+
   </form>
-  <input type='text' placeholder="" >
   <br>
   <br>
 </ion-content>

@@ -13,8 +13,8 @@ export class MoradorService {
   constructor(private http: HttpClient,
     private router: Router) { }
 
-  cadastrarMorador(morador: any) {
-    return this.http.post(`${environment.baseUrl}/moradores`, morador, {
+  cadastrarMorador(morador: any, condominioId: any) {
+    return this.http.post(`${environment.baseUrl}/moradores?condominioId=`+condominioId, morador, {
       observe: 'response',
       responseType: 'text'
     }).pipe(

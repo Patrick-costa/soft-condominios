@@ -24,6 +24,7 @@ export class CadastroPage implements OnInit {
 
   formulario: FormGroup;
   dados: any = [];
+  condominio: any = []
   cep: string = '';
   bairro: string;
   cidade: string;
@@ -43,6 +44,10 @@ export class CadastroPage implements OnInit {
     }
   }
 
+  teste(){
+    console.log(this.formulario.get('condominio').value)
+  }
+
   async cadastrar(){
     this.morador = {
       apartamento: this.formulario.get('apartamento').value,
@@ -58,7 +63,7 @@ export class CadastroPage implements OnInit {
     console.log(this.morador);
     try {
       await this.presentLoading();
-      this.moradorService.cadastrarMorador(this.morador)
+      this.moradorService.cadastrarMorador(this.morador, this.formulario.get('condominio').value)
         .subscribe(complete => {
           console.log(complete.status);
           return this.presentToastSuccess();
@@ -99,14 +104,6 @@ export class CadastroPage implements OnInit {
     }
 
 
-  }
-
-  teste(){
-
-    return this.http.get(`${environment.baseUrl}/condominios?bairro=`+ this.bairro).subscribe( x => {
-      console.log(x);
-    })
-   
   }
 
   createForm(){
@@ -187,6 +184,11 @@ export class CadastroPage implements OnInit {
           if (viacep != null) {
             this.dados = JSON.parse(viacep);
             console.log(this.dados);
+            this.bairro = this.dados['bairro']
+            this.http.get(`${environment.baseUrl}/condominios/search?bairro=`+ this.bairro).subscribe( x => {
+              this.condominio = x['content'];
+              console.log(this.condominio);
+            })
           }
 
         });

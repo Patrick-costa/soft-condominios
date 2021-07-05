@@ -33,16 +33,16 @@ export class CadCondominioPage implements OnInit {
     const cep: string = this.formulario.get('cep').value
     
     this.condominio = {
-      bairro: this.formulario.get('bairro').value,
+      bairro: this.dados['bairro'],
       cep: this.dados['cep'],
       cnpj: this.formulario.get('cnpj').value,
-      cidade: this.formulario.get('cidade').value,
-      estado: this.formulario.get('estado').value,
+      cidade: this.dados['localidade'],
+      estado: this.dados['uf'],
       linkContrato: null,
       nomeFantasia: this.formulario.get('nomeFantasia').value,
       numero: this.formulario.get('numero').value,
       razaoSocial: this.formulario.get('razaoSocial').value,
-      rua: this.formulario.get('rua').value,
+      rua: this.dados['logradouro'],
     }
 
     console.log(this.condominio);

@@ -35,7 +35,7 @@ export class CadColaboradorPage implements OnInit {
     let confirmPass = group.get("confirmar_senha").value;
 
     return pass === confirmPass ? null : { notSame: true }
-  }
+  } 
 
 
   async cadastrar() {
