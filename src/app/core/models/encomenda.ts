@@ -1,9 +1,9 @@
 export class Encomenda{
     // id: number
     descricao: string
-    destinatario: string
+    destinatario: number
     // bloco: string
     // apartamento: string
     // dataEntrega: Date
-    // status: string
+    // status: boolean
 }

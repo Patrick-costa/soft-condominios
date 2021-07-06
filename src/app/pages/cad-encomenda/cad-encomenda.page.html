@@ -21,9 +21,17 @@
 
     <div class="inputs">
 
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option style="text-transform: capitalize;" *ngFor="let usuarios of nome"
+          value="{{usuarios.nome}} {{usuarios.sobrenome}}">
+          {{usuarios.nome}} {{usuarios.sobrenome}}
+        </mat-option>
+      </mat-autocomplete>
+
       <div class="input-cadastro2">
         <ion-label>Destinatario</ion-label>
-        <input type="text" placeholder="" formControlName="destinatario">
+        <input style="text-transform: capitalize" type="text" placeholder="" (input)="filtrarNome($event)"
+          [(ngModel)]='destinatario' formControlName="destinatario" matInput [matAutocomplete]="auto" >
       </div>
 
       <div class="input-cadastro2">

@@ -35,11 +35,9 @@ export class AppComponent {
       let dados = JSON.stringify(x);
       let usuario = dados;
       this.dados = JSON.parse(usuario);
-      console.log(this.dados);
       if(this.dados['funcao']){
         this.condominio = this.dados.condominio[0];
         this.funcao = this.dados['funcao'];
-        console.log(this.funcao);
       } else{
         this.condominio = this.dados['condominio'];
       }

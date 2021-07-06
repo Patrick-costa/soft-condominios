@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {  Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { EncomendaService } from '../../share/utils/services/encomenda.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Encomenda } from '../../core/models/encomenda';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-cad-encomenda',
@@ -13,23 +14,52 @@ import { Encomenda } from '../../core/models/encomenda';
 export class CadEncomendaPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
-              private encomendaService: EncomendaService,
-              private http: HttpClient,
-              private toastController: ToastController,
-              private loadingController: LoadingController) { }
+    private encomendaService: EncomendaService,
+    private http: HttpClient,
+    private toastController: ToastController,
+    private loadingController: LoadingController) { }
 
   formulario: FormGroup;
   loading: any;
   encomenda: Encomenda = new Encomenda();
+  user: any = [];
+  nome: any = [];
+  destinatario: string;
+  idUser: any = []
 
   ngOnInit() {
     this.createForm();
+    this.getNome();
   }
 
-  async cadastrar(){
+  getNome() {
+    this.http.get(`${environment.baseUrl}/moradores/searchByNome?nome=`).subscribe(x => {
+      let dados = JSON.stringify(x);
+      let usuario = dados;
+      this.user = JSON.parse(usuario);
+      console.log(this.user);
+    })
+  }
+
+  filtrarNome(evt) {
+    const procurarNome = evt.srcElement.value;
+    this.nome = this.user.filter(x => {
+      if (x => x['nome'] + ' ' + x['sobrenome'] == this.destinatario) {
+        return ((x['nome'] + ' ' + x['sobrenome']).toLocaleLowerCase().indexOf(procurarNome.toLowerCase()) > -1);
+      }
+    });
+
+    let dados = JSON.stringify(this.nome);
+    let usuario = dados;
+    let id = JSON.parse(usuario);
+    this.idUser = id[0].id
+    console.log(this.idUser);
+  }
+
+  async cadastrar() {
     this.encomenda = {
       descricao: this.formulario.get('descricao').value,
-      destinatario: this.formulario.get('destinatario').value
+      destinatario: this.idUser
     }
     console.log(this.encomenda);
 
@@ -76,10 +106,11 @@ export class CadEncomendaPage implements OnInit {
     }
   }
 
-  createForm(){
+  createForm() {
     this.formulario = this.formBuilder.group({
       destinatario: ['', Validators.required],
       descricao: ['', Validators.required],
+      destinatarioId: ['', Validators.required]
     });
   }
 
