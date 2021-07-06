@@ -52,13 +52,13 @@ export class CadSindicoPage implements OnInit {
   }
 
   async cadastrar() {
-    let funcao: string = 'Sindico'
     this.sindico = {
       nome: this.formulario.get('nome').value,
       sobrenome: this.formulario.get('sobrenome').value,
       cpf: this.formulario.get('cpf').value,
       email: this.formulario.get('email').value,
-      funcao: funcao,
+      funcao: null,
+      condominio: null,
       linkFoto: null,
       status: null,
       senha: this.formulario.get('senha').value,

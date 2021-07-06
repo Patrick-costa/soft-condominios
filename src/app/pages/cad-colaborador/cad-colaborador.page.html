@@ -37,6 +37,13 @@
       </div>
 
       <div class="input-cadastro2">
+        <ion-label>Condominio</ion-label>
+        <ion-select formControlName="condominio">
+          <ion-select-option *ngFor="let condominios of condominio" value="{{condominios.id}}">{{condominios.id}}</ion-select-option>
+        </ion-select>
+      </div>
+
+      <div class="input-cadastro2">
         <ion-label>Função</ion-label>
         <ion-select formControlName="funcao">
           <ion-select-option>Porteiro</ion-select-option>

@@ -15,8 +15,19 @@ export class ColaboradorService {
 
   jwt = new JwtHelperService();
 
-  cadastrarColaborador(colaborador: any) {
-    return this.http.post(`${environment.baseUrl}/colaboradores`, colaborador, {
+  cadastrarFuncionario(funcionario: any) {
+    return this.http.post(`${environment.baseUrl}/colaboradores/funcionarios`, funcionario, {
+      observe: 'response',
+      responseType: 'text'
+    }).pipe(
+      tap(response => {
+        console.log(response)
+      })
+    );
+  }
+
+  cadastrarSindico(sindico: any) {
+    return this.http.post(`${environment.baseUrl}/colaboradores`, sindico, {
       observe: 'response',
       responseType: 'text'
     }).pipe(
