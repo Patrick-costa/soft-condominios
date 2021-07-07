@@ -5,6 +5,7 @@ import { AgendamentoMudanca } from 'src/app/core/models/agendamentoMudanca';
 import { MudancaService } from 'src/app/share/utils/services/mudanca.service';
 import * as moment from 'moment';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-mudanca',
@@ -18,24 +19,33 @@ export class MudancaPage implements OnInit {
     private mudancaService: MudancaService,
     private loadingController: LoadingController,
     private toastController: ToastController,
-    private alertController: AlertController) { }
+    private alertController: AlertController,
+    private http: HttpClient) { }
 
   formulario: FormGroup;
   data: any;
   loading: any;
   mudanca: AgendamentoMudanca = new AgendamentoMudanca;
- 
+  dataMudanca: string;
+  horario: any = [];
 
   ngOnInit() {
     this.createForm();
     this.adapter.setLocale('br')
   }
 
+  buscarHorario(){
+    return this.http.get('http://app.axdeveloper.com.br/agendamentos-mudanca/buscar-horarios?data='+ moment(this.dataMudanca).format('YYYY-MM-DD')).subscribe(x =>{
+      this.horario = x;
+      console.log(this.horario);
+    })
+  }
+
   async cadastrar(){
     this.mudanca = {
       data: moment(this.formulario.get('diaMudanca').value).format('YYYY-MM-DD'),
       observacao: this.formulario.get('observacao').value,
-      hora: this.formulario.get('horaMudanca').value+':00'
+      hora: this.formulario.get('horaMudanca').value
     }
 
     console.log(this.mudanca)

@@ -77,7 +77,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/mudanca/mudanca.module').then( m => m.MudancaPageModule)
   },
   {
-    path: 'visualizar-mudanca',
+    path: 'visualizar-mudanca/:id',
     loadChildren: () => import('./pages/visualizar-mudanca/visualizar-mudanca.module').then( m => m.VisualizarMudancaPageModule)
   },
   {

@@ -26,7 +26,7 @@
         
       <div class="input-cadastro2">
         <ion-label>Selecione a data</ion-label>
-        <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="Clique aqui para escolher a data" formControlName="diaMudanca">
+        <input matInput [matDatepicker]="picker" [(ngModel)]="dataMudanca" (blur)="buscarHorario()" (click)="picker.open()" placeholder="Clique aqui para escolher a data" formControlName="diaMudanca">
         <mat-datepicker #picker> </mat-datepicker>
       </div>
 
@@ -34,10 +34,7 @@
       <div class="input-cadastro2">
         <ion-label>Horário</ion-label>
         <ion-select formControlName="horaMudanca">
-          <ion-select-option>10:00</ion-select-option>
-          <ion-select-option>11:00</ion-select-option>
-          <ion-select-option>13:00</ion-select-option>
-          <ion-select-option>14:00</ion-select-option>
+          <ion-select-option *ngFor="let hora of horario">{{hora}}</ion-select-option>
         </ion-select>
       </div>
 

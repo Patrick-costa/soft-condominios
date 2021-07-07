@@ -9,6 +9,7 @@ import { tap, finalize, mergeMap, map } from 'rxjs/operators';
 export class MudancaService {
 
   constructor(private http: HttpClient) { }
+  mudanca: any = []
 
   cadastrarMudanca(agendamento) {
     return this.http.post(`${environment.baseUrl}/agendamentos-mudanca`, agendamento, {
@@ -19,5 +20,11 @@ export class MudancaService {
         console.log(response)
       })
     );
+  }
+
+  visualizarMudanca(id: any){
+    return this.http.get(`${environment.baseUrl}/agendamentos-mudanca/search?condominio=`+id).subscribe(x =>{
+      this.mudanca = x['content'];
+    });
   }
 }

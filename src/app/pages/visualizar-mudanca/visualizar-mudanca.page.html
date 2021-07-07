@@ -19,48 +19,18 @@
 
   <div class="card-calendario">
     <ion-grid>
-      <ion-row style="margin-top: 0px">
+      <ion-row style="margin-top: 20px" *ngFor="let dados of mudanca">
         <ion-col size="2" class="paragraph-card-2">
-          <p class="paragraph1" style="font-size: 16px;">JUN</p>
+          <p class="paragraph1" style="font-size: 16px;">{{mes}}</p>
           <br>
-          <p class="paragraph1">21</p>
+          <p class="paragraph1">{{dia}}</p>
           <br>
-          <p class="paragraph1" style="font-size: 16px">2021</p>
+          <p class="paragraph1" style="font-size: 16px">{{ano}}</p>
         </ion-col>
-        <ion-col size="10" class="paragraph-card" style=" position: relative; right: 4px; z-index: -999; border-radius: 5px;">
-          <p>Horário: 13:00</p>
-          <p>Bloco: Não tem | Apartamento: 1001</p>
-          <p>Elevador Utilizado: Serviço</p>
-        </ion-col>
-      </ion-row>
-
-      <ion-row style="margin-top: 20px">
-        <ion-col size="2" class="paragraph-card-2">
-          <p class="paragraph1" style="font-size: 16px;">JUN</p>
-          <br>
-          <p class="paragraph1">21</p>
-          <br>
-          <p class="paragraph1" style="font-size: 16px">2021</p>
-        </ion-col>
-        <ion-col size="10" class="paragraph-card" style=" position: relative; right: 4px; z-index: -999; border-radius: 5px;">
-          <p>Horário: 13:00</p>
-          <p>Bloco: Não tem | Apartamento: 1001</p>
-          <p>Elevador Utilizado: Serviço</p>
-        </ion-col>
-      </ion-row>
-
-      <ion-row style="margin-top: 20px">
-        <ion-col size="2" class="paragraph-card-2">
-          <p class="paragraph1" style="font-size: 16px;">JUN</p>
-          <br>
-          <p class="paragraph1">21</p>
-          <br>
-          <p class="paragraph1" style="font-size: 16px">2021</p>
-        </ion-col>
-        <ion-col size="10" class="paragraph-card" style=" position: relative; right: 4px; z-index: -999; border-radius: 5px;">
-          <p>Horário: 13:00</p>
-          <p>Bloco: Não tem | Apartamento: 1001</p>
-          <p>Elevador Utilizado: Serviço</p>
+        <ion-col size="10" class="paragraph-card" style=" position: relative; text-transform: capitalize; right: 4px; z-index: -999; border-radius: 5px;">
+          <p>Horário: {{dados.hora}}</p>
+          <p>Bloco: {{dados.morador.bloco}} | Apartamento: {{dados.morador.apartamento}}</p>
+          <p>Nome: {{dados.morador.nome}} {{dados.morador.sobrenome}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>
