@@ -1,6 +1,5 @@
 export class AgendamentoMudanca{
-    id: number
-    dataHora: Date
+    data: string
+    hora: string
     observacao: string
-    status: string
 }

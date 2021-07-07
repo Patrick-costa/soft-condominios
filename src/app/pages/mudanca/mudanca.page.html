@@ -18,7 +18,7 @@
     <span>Agende o dia de mudanças para notificar os moradores</span>
   </div>
 
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
 
     <div class="inputs">
 
@@ -42,24 +42,11 @@
       </div>
 
       <div class="input-cadastro2">
-        <ion-label>Elevador</ion-label>
-        <ion-select formControlName="elevadorMudanca">
-          <ion-select-option>Serviço</ion-select-option>
-          <ion-select-option>Social</ion-select-option>
-        </ion-select>
+        <ion-label>Observação</ion-label>
+        <input type="text" placeholder="" formControlName="observacao" name="observacao">
       </div>
 
-      <div class="input-cadastro2">
-        <ion-label>Bloco</ion-label>
-        <input type="text" placeholder="" formControlName="blocoMudanca" name="bloco">
-      </div>
-
-      <div class="input-cadastro2">
-        <ion-label>Apartamento</ion-label>
-        <input type="number" placeholder="" formControlName="apartamentoMudanca" name="apartamento" required>
-      </div>
-
-      <ion-button class="button-login">Cadastrar</ion-button>
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
   <br>
