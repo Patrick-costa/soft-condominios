@@ -5,6 +5,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Encomenda } from '../../core/models/encomenda';
 import { environment } from '../../../environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cad-encomenda',
@@ -17,7 +18,8 @@ export class CadEncomendaPage implements OnInit {
     private encomendaService: EncomendaService,
     private http: HttpClient,
     private toastController: ToastController,
-    private loadingController: LoadingController) { }
+    private loadingController: LoadingController,
+    private activatedRoute: ActivatedRoute) { }
 
   formulario: FormGroup;
   loading: any;
@@ -26,14 +28,17 @@ export class CadEncomendaPage implements OnInit {
   nome: any = [];
   destinatario: string;
   idUser: any = []
-
+  id: any;
+  idRoute: any;
   ngOnInit() {
+    this.idRoute = this.activatedRoute.snapshot.params['id'];
+    console.log(this.idRoute)
     this.createForm();
     this.getNome();
   }
 
   getNome() {
-    this.http.get(`${environment.baseUrl}/moradores/searchByNome?nome=`).subscribe(x => {
+    this.http.get('http://app.axdeveloper.com.br/moradores/searchByNome?condominio='+this.idRoute+'&nome=').subscribe(x => {
       let dados = JSON.stringify(x);
       let usuario = dados;
       this.user = JSON.parse(usuario);

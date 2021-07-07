@@ -61,7 +61,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
-    path: 'cad-encomenda',
+    path: 'cad-encomenda/:id',
     loadChildren: () => import('./pages/cad-encomenda/cad-encomenda.module').then( m => m.CadEncomendaPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
@@ -69,7 +69,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/cad-informativo/cad-informativo.module').then( m => m.CadInformativoPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
-    path: 'visualizar-encomenda',
+    path: 'visualizar-encomenda/:id',
     loadChildren: () => import('./pages/visualizar-encomenda/visualizar-encomenda.module').then( m => m.VisualizarEncomendaPageModule),  canActivate:[AutenticacaoGuard]
   },
   {

@@ -148,7 +148,7 @@
 
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;" *ngIf='funcao != "Sindico"'>
-          <div class="div-option" routerLink="/visualizar-encomenda">
+          <div class="div-option" [routerLink]="['/visualizar-encomenda', idCondominio]">
             <ion-icon style="color: #fff; font-size: 40px; text-align: center;" src="../../assets/icon/entrega.svg">
             </ion-icon>
             <span class="span-text-option">Encomendas</span>

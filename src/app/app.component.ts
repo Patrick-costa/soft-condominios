@@ -15,6 +15,8 @@ export class AppComponent {
   funcao: string;
   sindicoList: any = [];
   condominio: any = []
+  id: number;
+  id2: number;
 
   constructor(private authService: AutentiticacaoService,
               private router: Router,
@@ -24,6 +26,7 @@ export class AppComponent {
   logout(){
     this.authService.logout();
     this.menuCtrl.close();
+    // this.funcao == "";
   }
 
   ngOnInit() {
@@ -38,8 +41,11 @@ export class AppComponent {
       if(this.dados['funcao']){
         this.condominio = this.dados.condominio[0];
         this.funcao = this.dados['funcao'];
+        this.id = this.condominio['id'];
+        this.id2 = this.id;
       } else{
         this.condominio = this.dados['condominio'];
+        this.id = this.condominio['id'];
       }
     })
   }

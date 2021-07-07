@@ -14,6 +14,7 @@ export class FolderPage implements OnInit {
   funcao: string;
   sindicoList: any = [];
   condominio: any = []
+  idCondominio: any;
 
   constructor(private activatedRoute: ActivatedRoute,
               private http: HttpClient) { }
@@ -35,9 +36,10 @@ export class FolderPage implements OnInit {
       if(this.dados['funcao']){
         this.condominio = this.dados.condominio[0];
         this.funcao = this.dados['funcao'];
-        console.log(this.funcao)
+        this.idCondominio = this.condominio['id'];
       } else{
         this.condominio = this.dados['condominio'];
+        this.idCondominio = this.condominio['id'];
       }
     })
   }

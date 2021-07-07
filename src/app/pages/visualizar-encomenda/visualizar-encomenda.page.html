@@ -4,10 +4,18 @@
       <ion-buttons slot="start">
         <ion-menu-button src="../../assets/img/menu.svg" style="color: #fff"></ion-menu-button>
       </ion-buttons>
-      <div class="icones">
+      <!-- <div class="icones">
         <span>Filtrar</span>
         <ion-icon src="../../assets/icon/filtro.svg"></ion-icon>
-      </div>
+      </div> -->
+      <ion-select placeholder="Filtrar" style="width: 30% !important; float: right;" (ionChange)="filtrar()" [(ngModel)]="filtro">
+        <ion-select-option value="false">Não Entregue</ion-select-option>
+        <ion-select-option value="true">Entregue</ion-select-option>
+      </ion-select>
+      <!-- <mat-select [(value)]="selected" placeholder="Filtrar" style="width: 30% !important; float: right; color: #fff;" >
+        <mat-option value="option1">Entregue</mat-option>
+        <mat-option value="option2">Não Entregue</mat-option>
+      </mat-select> -->
     </ion-toolbar>
   </ion-header>
   <br>
@@ -16,24 +24,24 @@
     <input class="input-search" placeholder="Procurar Encomendas">
     <ion-icon src="../../assets/icon/pesquisa.svg"></ion-icon>
   </div>
-  <mat-expansion-panel hideToggle style="min-height: 10px; width: 90%; margin: 0 auto; margin-top: 20px !important;">
+  <mat-expansion-panel *ngFor="let encomendas of encomenda" hideToggle style="min-height: 10px; width: 90%; margin: 0 auto; margin-top: 20px !important;">
     <mat-expansion-panel-header>
       <mat-panel-title style="display: flex; align-items: center;">
         <ion-icon src="../../assets/icon/box.svg" style="font-size: 30px;"></ion-icon>
-        &nbsp;&nbsp;<span style="font-size: 15px;">#001 - Patrick Araujo</span><br>
+        &nbsp;&nbsp;<span style="font-size: 15px;text-transform: capitalize;">#{{encomendas.id}} - {{encomendas.destinatario}}</span><br>
       </mat-panel-title>
 
     </mat-expansion-panel-header>
-    <span style="color: #6200EE">Encomenda cadastrada em 25/06/21 ás 19:54</span><br>
-    <span style="color: #6200EE">Por: Silvano Américo</span><br><br>
+    <span style="color: #6200EE">Encomenda cadastrada em<br> {{encomendas.dataCriacao}} ás {{encomendas.horaCriacao}}</span><br>
+    <span style="color: #6200EE; text-transform: capitalize;">Por: {{encomendas.autor}}</span><br><br>
 
     <span>Descrição da Entrega:</span><br>
-    <span>Caixa da Lojas Americanas</span>
+    <span>{{encomendas.descricao}}</span>
 
     <div class="entrega">
-      <button>Entregue</button>
+      <button (click)="alterar(encomendas.id, encomendas.descricao, encomendas.morador.id)">Entregue</button>
     </div>
-    
+
   </mat-expansion-panel>
 
 </ion-content>
