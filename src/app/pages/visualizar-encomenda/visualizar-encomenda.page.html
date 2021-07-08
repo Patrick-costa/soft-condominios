@@ -39,7 +39,7 @@
     <span>{{encomendas.descricao}}</span>
 
     <div class="entrega">
-      <button (click)="alterar(encomendas.id, encomendas.descricao, encomendas.morador.id)">Entregue</button>
+      <button (click)="alterar(encomendas.id, encomendas.descricao, encomendas.morador.id)" [routerLink]="['/visualizar-encomenda',encomendas.morador.condominio.id]">Entregue</button>
     </div>
 
   </mat-expansion-panel>

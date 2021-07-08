@@ -56,10 +56,10 @@
       <b>Acompanhamento</b>
     </h3>
 
-    <form class="example-form">
+
       <mat-form-field style="width: 100%;">
         <mat-label>Comente Aqui</mat-label>
-        <textarea type="email" matInput style="height: 50px;" [errorStateMatcher]="matcher" placeholder="Converse com o morador"></textarea>
+        <textarea type="email"[(ngModel)]="mensagem" style="padding-left: 15px;" matInput style="height: 50px;" [errorStateMatcher]="matcher" placeholder="Converse com o morador"></textarea>
       </mat-form-field>
 
       <div class="anexo">
@@ -67,10 +67,9 @@
         <ion-button (click)="file.click()">Anexar Arquivos</ion-button>
         <br>
         <br>
-        <ion-button>Enviar Comentario</ion-button>
+        <ion-button (click)="enviarMensagens(dados.id)">Enviar Comentario</ion-button>
         <input type="file" #file id="file" style="font-size: 13px !important">
       </div>
-    </form>
 
     <br>
     <br>

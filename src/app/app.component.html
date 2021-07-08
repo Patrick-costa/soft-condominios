@@ -52,8 +52,8 @@
 
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-ocorrencia"
-              *ngIf='permissao == "Sindico" || permissao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['visualizar-ocorrencia',id]"
+               lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/ocorrencia-branco.svg"></ion-icon>
               <ion-label>Visualizar Ocorrencias</ion-label>
             </ion-item>

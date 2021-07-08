@@ -22,4 +22,17 @@ export class OcorrenciaService {
       })
     );
   }
+
+  enviarMensagem(mensagem, id: any){
+    return this.http.post(`${environment.baseUrl}/ocorrencias/`+id+'/comentario', mensagem, {
+      observe: 'response',
+      responseType: 'text'
+    }).pipe(
+      tap(response => {
+        console.log(response)
+      })
+    );
+  }
+
+  
 }

@@ -3,7 +3,7 @@ import { EncomendaService } from '../../share/utils/services/encomenda.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { environment } from '../../../environments/environment';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +16,8 @@ export class VisualizarEncomendaPage implements OnInit {
   constructor(
     private encomendaService: EncomendaService,
     private http: HttpClient,
-    private activatedRoute: ActivatedRoute,) { }
+    private activatedRoute: ActivatedRoute,
+    private route: Router) { }
 
   id: any;
   encomenda: any = []
@@ -43,9 +44,14 @@ export class VisualizarEncomendaPage implements OnInit {
       status: 'true'
     }
     console.log(this.encomendaAtualizada);
-    return this.encomendaService.atualizarEncomenda(id, this.encomendaAtualizada, this.idCondominio)
+
+    this.encomendaService.atualizarEncomenda(id, this.encomendaAtualizada, this.idCondominio)
+    return this.redirect();
   }
 
+  redirect(){
+    this.route.navigate(['/visualizar-encomenda',this.id ])
+  }
 
 
   filtrar() {

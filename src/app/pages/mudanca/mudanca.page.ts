@@ -43,7 +43,7 @@ export class MudancaPage implements OnInit {
   }
 
   buscarHorario() {
-    return this.http.get('http://app.axdeveloper.com.br/agendamentos-mudanca/buscar-horarios?data=' + moment(this.dataMudanca).format('YYYY-MM-DD')).subscribe(x => {
+    return this.http.get(`${environment.baseUrl}/agendamentos-mudanca/buscar-horarios?data=` + moment(this.dataMudanca).format('YYYY-MM-DD')).subscribe(x => {
       this.horario = x;
       console.log(this.horario);
     })

@@ -39,7 +39,7 @@ export class CadEncomendaPage implements OnInit {
   }
 
   getNome() {
-    this.http.get('http://app.axdeveloper.com.br/moradores/searchByNome?condominio='+this.idRoute+'&nome=').subscribe(x => {
+    this.http.get(`${environment.baseUrl}/moradores/searchByNome?condominio=`+this.idRoute+'&nome=').subscribe(x => {
       let dados = JSON.stringify(x);
       let usuario = dados;
       this.user = JSON.parse(usuario);
