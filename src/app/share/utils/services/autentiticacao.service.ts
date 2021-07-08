@@ -17,6 +17,7 @@ export class AutentiticacaoService {
   email: string;
   senha: string;
   jwt = new JwtHelperService();
+ 
 
 
   constructor(

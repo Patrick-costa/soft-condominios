@@ -11,6 +11,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AccountServiceService {
   public exibirMenu = new BehaviorSubject<boolean>(false);
   public estaLogado = new BehaviorSubject<boolean>(false);
+  public permissoes = new BehaviorSubject<String>('Morador');
+  
   jwt = new JwtHelperService();
   
   constructor(
