@@ -19,8 +19,10 @@ export class VisualizarMudancaPage implements OnInit {
   diaMudanca: any = [];
   ano: any = [];
   dia: any = {};
-  mes: any = [];
+  mesList: any = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  mes: string;
   data: Date = new Date();
+  teste: any = [];
   
   ngOnInit() {
     this.visualizar();
@@ -29,17 +31,8 @@ export class VisualizarMudancaPage implements OnInit {
   visualizar(){
     this.id = this.activatedRoute.snapshot.params['id'];
     return this.http.get(`${environment.baseUrl}/agendamentos-mudanca/search?condominio=`+this.id).subscribe(x =>{
-      this.mudanca = x['content'];
-      console.log(this.mudanca)
-
-      this.mudanca.forEach(x => {
-        this.diaMudanca = x['data'];
-        this.diaMudanca = this.diaMudanca.split('-');
-        this.ano = this.diaMudanca[0];
-        this.mes = this.diaMudanca[1];
-        this.dia = this.diaMudanca[2]
-        console.log(this.dia);
-      });
+      this.mudanca = x['content']
+      
     });
   }
 

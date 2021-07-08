@@ -21,11 +21,11 @@
     <ion-grid>
       <ion-row style="margin-top: 20px" *ngFor="let dados of mudanca">
         <ion-col size="2" class="paragraph-card-2">
-          <p class="paragraph1" style="font-size: 16px;">{{mes}}</p>
+          <p class="paragraph1" style="font-size: 16px;">{{dados.data | date: 'MMM'}}</p>
           <br>
-          <p class="paragraph1">{{dia}}</p>
+          <p class="paragraph1">{{dados.data | date: 'd'}}</p>
           <br>
-          <p class="paragraph1" style="font-size: 16px">{{ano}}</p>
+          <p class="paragraph1" style="font-size: 16px">{{dados.data | date: 'y'}}</p>
         </ion-col>
         <ion-col size="10" class="paragraph-card" style=" position: relative; text-transform: capitalize; right: 4px; z-index: -999; border-radius: 5px;">
           <p>Horário: {{dados.hora}}</p>

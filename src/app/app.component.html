@@ -37,7 +37,7 @@
               <ion-label>Visualizar Documentos</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-visitante"
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['visualizar-visitante',id]"
               *ngIf='funcao == "Sindico" || funcao == "Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/visitante-branco.svg"></ion-icon>
               <ion-label>Visualizar Visitantes</ion-label>
@@ -80,7 +80,7 @@
               <ion-label>Cadastrar Ocorrencias</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-visitante"
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['cad-visitante',id]"
             *ngIf='funcao == "Sindico" || funcao == "Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-visit.svg"></ion-icon>
               <ion-label>Cadastrar Visitante</ion-label>

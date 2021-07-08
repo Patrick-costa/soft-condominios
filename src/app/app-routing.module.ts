@@ -41,7 +41,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/livro/livro.module').then( m => m.LivroPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
-    path: 'cad-visitante',
+    path: 'cad-visitante/:id',
     loadChildren: () => import('./pages/cad-visitante/cad-visitante.module').then( m => m.CadVisitantePageModule),  canActivate:[AutenticacaoGuard]
   },
   {
@@ -49,7 +49,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/visualizar-doc/visualizar-doc.module').then( m => m.VisualizarDocPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
-    path: 'visualizar-visitante',
+    path: 'visualizar-visitante/:id',
     loadChildren: () => import('./pages/visualizar-visitante/visualizar-visitante.module').then( m => m.VisualizarVisitantePageModule),  canActivate:[AutenticacaoGuard]
   },
   {

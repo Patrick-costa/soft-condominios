@@ -40,3 +40,33 @@ div.icones{
         float: right;
     }
 }
+
+.entrega {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px !important;
+  
+    button {
+      width: 100%;
+      height: 35px;
+      background: #5231A1;
+      border-radius: 5px;
+      color: #fff;
+    }
+  }
+
+ion-select::part(placeholder),
+ion-select::part(text) {
+  color: #fff;
+}
+
+ion-select::part(placeholder) {
+  color: #fff;
+  opacity: 1;
+}
+
+ion-select::part(icon) {
+  color: #fff;
+  opacity: 1;
+}

@@ -14,16 +14,21 @@
     <span>Visitantes</span>
   </div>
 
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
     <div class="inputs">
       <div class="input-cadastro1">
-        <ion-label>Nome Completo</ion-label>
-        <input type="text" placeholder="" formControlName="nomeVisitante" name="nome" required>
+        <ion-label>Nome</ion-label>
+        <input type="text" placeholder="" formControlName="nome" name="nome" required>
+      </div>
+
+      <div class="input-cadastro1">
+        <ion-label>Sobrenome</ion-label>
+        <input type="text" placeholder="" formControlName="sobrenome" name="nome" required>
       </div>
 
       <div class="input-cadastro2">
         <ion-label>CPF</ion-label>
-        <input type="text" [brmasker]="{mask:'000.000.000-00', len:14, userCaracters: true}" placeholder="" formControlName="cpfVisitante" name="cpf" required>
+        <input type="text" [brmasker]="{mask:'000.000.000-00', len:14, userCaracters: true}" placeholder="" formControlName="cpf" name="cpf" required>
       </div>
 
       <div class="input-cadastro2">
@@ -36,15 +41,20 @@
 
       <div class="input-cadastro2">
         <ion-label>Bloco</ion-label>
-        <input type="text" placeholder="" formControlName="blocoVisitante" name="bloco">
+        <input type="text" placeholder="" formControlName="bloco" name="bloco">
       </div>
 
       <div class="input-cadastro2">
         <ion-label>Apartamento</ion-label>
-        <input type="number" placeholder="" formControlName="apartamentoVisitante" name="apartamento" required>
+        <input type="number" placeholder="" formControlName="apartamento" name="apartamento" required>
       </div>
 
-      <ion-button class="button-login">Cadastrar</ion-button>
+      <div class="input-cadastro2">
+        <ion-label>Observação</ion-label>
+        <textarea type="number" placeholder="" formControlName="observacao" name="observacao" required></textarea>
+      </div>
+
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
   <br>

@@ -77,6 +77,14 @@ div.inputs{
             border-radius: 5px;
             height: 55px;  
         }
+
+        textarea{
+            width: 100%;
+            border: 1px solid #666666;
+            border-radius: 5px;
+            height: 55px;
+            --padding-start: 15px
+        }
     }
 
     div.esqueci-senha{

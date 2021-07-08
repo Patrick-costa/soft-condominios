@@ -17,7 +17,7 @@ export class EncomendaService {
   cadastrarEncomenda(encomenda) {
     return this.http.post(`${environment.baseUrl}/encomendas`, encomenda, {
       observe: 'response',
-      responseType: 'text'
+      responseType: 'text' 
     }).pipe(
       tap(response => {
         console.log(response)
