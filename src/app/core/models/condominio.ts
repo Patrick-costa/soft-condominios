@@ -3,6 +3,7 @@ import {Cidade} from "./cidade";
 import {Estado} from "./estado";
 
 export class Condominio{
+    id?: number
     cep: string
     rua: string
     numero: string

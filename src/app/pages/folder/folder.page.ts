@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { NewColaborador } from 'src/app/core/models/newColaborador';
+import { Condominio } from 'src/app/core/models/condominio';
+import { GrupoPermissao } from 'src/app/core/models/grupoPermissao';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Colaborador } from 'src/app/core/models/colaborador';
+import { AccountServiceService } from 'src/app/share/utils/services/account-service.service';
+import { Morador } from 'src/app/core/models/morador';
 
 @Component({
   selector: 'app-folder',
@@ -12,37 +19,51 @@ export class FolderPage implements OnInit {
   public folder: string;
   dados: any = [];
   funcao: string;
+  permissoes: GrupoPermissao[];
   sindicoList: any = [];
-  condominio: any = []
+  condominio: Condominio = new Condominio();
+  condominioList: Condominio[];
+  newColaborador: NewColaborador;
   idCondominio: any;
-
   constructor(private activatedRoute: ActivatedRoute,
+              private account: AccountServiceService,
               private http: HttpClient) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    
+    
   }
-  
+ 
+  pegarValor(e: any){
+    this.condominio = this.condominioList.find(x => {return x.id === e})
+  }
   ionViewWillEnter() {
-    this.getUser();
+    this.account.estaLogado.subscribe(log => log ? this.buscandoDados() : false )
+    
+  
   }
 
-  getUser() {
-    this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe(x => {
-      let dados = JSON.stringify(x);
-      let usuario = dados;
-      this.dados = JSON.parse(usuario);
-      console.log(this.dados);
-      if(this.dados['funcao']){
-        this.condominio = this.dados.condominio[0];
-        this.funcao = this.dados['funcao'];
-        this.idCondominio = this.condominio['id'];
-      } else{
-        this.condominio = this.dados['condominio'];
-        this.idCondominio = this.condominio['id'];
+  buscandoDados(){
+    this.account.getUser().subscribe((data: any) =>{
+      
+      data.usuario.grupoPermissao.forEach( p => {
+        this.funcao = p.descricao;
+      })
+      if(this.funcao != "Morador"){
+        if(data.condominio.length > 1){
+          this.condominioList = data.condominio
+         }
+         data.condominio.forEach(x => this.condominio = x);
+      }else{
+        this.condominio = data.condominio;
       }
-    })
+      
+      
+      this.newColaborador = data;
+     });
   }
+ 
 
   // getDadosSindico(){
   //   this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe(x => {

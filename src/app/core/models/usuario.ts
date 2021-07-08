@@ -10,6 +10,6 @@ export class Usuario{
     status: string
     linkFoto: string
     notificacao: Noticacao
-    grupoPermissao: GrupoPermissao
+    grupoPermissao: GrupoPermissao[]
     
 }

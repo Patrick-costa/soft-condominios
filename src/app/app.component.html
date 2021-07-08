@@ -16,8 +16,10 @@
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="perfil" lines="none"
               detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/perfil-1.svg"></ion-icon>
-              <ion-label>Perfil {{ teste || async }}</ion-label>
+              <ion-label>Perfil</ion-label>
             </ion-item>
+
+           
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['visualizar-mudanca',id]"
               lines="none" detail="false" routerLinkActive="selected">
@@ -26,7 +28,7 @@
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-sugestao"
-              *ngIf='funcao == "Sindico" || funcao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico" || permissao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" name="bulb"></ion-icon>
               <ion-label>Visualizar Sugestões </ion-label>
             </ion-item>
@@ -38,68 +40,68 @@
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['visualizar-visitante',id]"
-              *ngIf='funcao == "Sindico" || funcao == "Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico" || permissao == "Zelador" || permissao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/visitante-branco.svg"></ion-icon>
               <ion-label>Visualizar Visitantes</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['/visualizar-encomenda',id]"
-              *ngIf='funcao != "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao != "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/entrega-branco.svg"></ion-icon>
               <ion-label>Visualizar Encomendas</ion-label>
 
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="visualizar-ocorrencia"
-              *ngIf='funcao == "Sindico" || funcao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico" || permissao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/ocorrencia-branco.svg"></ion-icon>
               <ion-label>Visualizar Ocorrencias</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-sindico"
-              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/sind.svg"></ion-icon>
               <ion-label>Cadastrar Sindico</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-condominio"
-              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/predio.svg"></ion-icon>
               <ion-label>Cadastrar Condominio</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="documentos"
-              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/baixar-doc.svg"></ion-icon>
               <ion-label>Cadastrar Documentos</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-reclamacoes"
-              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-recla.svg"></ion-icon>
               <ion-label>Cadastrar Ocorrencias</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['cad-visitante',id]"
-            *ngIf='funcao == "Sindico" || funcao == "Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
+            *ngIf='permissao == "Sindico" || permissao == "Zelador" || permissao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-visit.svg"></ion-icon>
               <ion-label>Cadastrar Visitante</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['/cad-encomenda',id2]"
-              *ngIf='funcao == " Zelador" || funcao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == " Zelador" || permissao == "Porteiro"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" name="cube"></ion-icon>
               <ion-label>Cadastrar Encomenda</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-colaborador"
-              *ngIf='funcao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-morador-branco.svg"></ion-icon>
               <ion-label>Cadastrar Colaborador</ion-label>
             </ion-item>
 
             <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-informativo"
-              *ngIf='funcao == "Sindico" || funcao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
+              *ngIf='permissao == "Sindico" || permissao == "Zelador"' lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/informativo-branco.svg"></ion-icon>
               <ion-label>Cadastrar Informativos</ion-label>
             </ion-item>

@@ -12,8 +12,15 @@
   <div class="sub-header-menu">
     <ion-icon name="person"></ion-icon>
     <ion-label class="label-name">Sindico: Mahamoud Marfri</ion-label>
+    
   </div>
-
+  <ion-item *ngIf="condominioList" >
+    <ion-label>Condominio: </ion-label>
+    <ion-select [(ngModel)]="condominio.id" (ngModelChange)="pegarValor($event)" >
+      <ion-select-option *ngFor="let condominios of condominioList" [value]="condominios.id">{{condominios.nomeFantazia }}</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
   <div class="card-container">
     <div class="card-container-content">
       <ion-grid>

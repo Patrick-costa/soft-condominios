@@ -4,6 +4,7 @@ import { StorageService } from './storage.service';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NewColaborador } from 'src/app/core/models/newColaborador';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,9 @@ export class AccountServiceService {
     return this.http.get<any>(`${environment.baseUrl}/usuarios/perfil?value=${usuario}`);
   }
 
+  public getUser() {
+    return this.http.get(`${environment.baseUrl}/usuarios/auth`);
+  }
 
 
   public getUserLoggedIn(){

@@ -34,7 +34,11 @@ export class LoginPage implements OnInit {
     await this.presentLoading();
     try {
       this.autenticacao.login(this.formulario.value)
-        .subscribe(complete => this.router.navigate(['folder']), error => {
+        .subscribe(complete => {
+          this.router.navigate(['folder'])
+          this.account.estaLogado.next(true);
+        }
+          , error => {
           console.log(error);
           let message: string
           switch (error.status) {

@@ -20,7 +20,7 @@ export class AppComponent {
   id: number;
   id2: number;
   subscription: Subscription
-  teste: Observable<String>;
+  permissao: String;
 
   constructor(private authService: AutentiticacaoService,
               private account: AccountServiceService,
@@ -39,8 +39,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.getUser();
-    this.teste = this.account.permissoes
+    this.account.estaLogado.subscribe(data => data ? this.getUser() : false);
   }
 
   getUser() {
@@ -50,19 +49,7 @@ export class AppComponent {
       this.dados = JSON.parse(usuario);
       let permissoes: Array<any> = this.dados['usuario'].grupoPermissao;
       permissoes.forEach( data => {
-        switch(data.descricao){
-          case 'Morador':
-          this.account.permissoes.next(data.descricao);
-          case 'Sindico':
-          this.account.permissoes.next(data.descricao);
-          case 'Porteiro':
-          this.account.permissoes.next(data.descricao);
-          case 'Zelador':
-          this.account.permissoes.next(data.descricao);
-
-          default: 
-          this.account.permissoes.next('Morador');
-        }
+        this.permissao = data.descricao
       })
       if(this.dados['funcao']){
         this.condominio = this.dados.condominio[0];
