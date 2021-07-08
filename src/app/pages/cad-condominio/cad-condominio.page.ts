@@ -4,6 +4,7 @@ import { AlertController, ToastController, LoadingController } from '@ionic/angu
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Condominio } from '../../core/models/condominio';
 import { CondominioService } from '../../share/utils/services/condominio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cad-condominio',
@@ -15,6 +16,7 @@ export class CadCondominioPage implements OnInit {
   constructor(private http: HttpClient,
     private alertControl: AlertController,
     private formBuilder: FormBuilder,
+    private router: Router,
     private condominioService: CondominioService,
     private toastController: ToastController,
     private loadingController: LoadingController) { }
@@ -51,8 +53,8 @@ export class CadCondominioPage implements OnInit {
       this.condominioService.cadastrarCondominio(this.condominio)
         .subscribe(complete => {
           console.log(complete.status);
-          return this.presentToastSuccess();
-
+          this.presentToastSuccess();
+          this.router.navigate(['folder']);
         }, error => {
           console.log(error);
           let message: string

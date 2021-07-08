@@ -76,8 +76,8 @@
               <ion-label>Cadastrar Documentos</ion-label>
             </ion-item>
 
-            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" routerLink="cad-reclamacoes"
-              *ngIf='permissao == "Sindico"' lines="none" detail="false" routerLinkActive="selected">
+            <ion-item lines="none" style="--background: #5231A1 !important; color: #fff" routerDirection="root" [routerLink]="['cad-reclamacoes',id]"
+               lines="none" detail="false" routerLinkActive="selected">
               <ion-icon style="color: #fff" slot="start" src="../../assets/icon/cad-recla.svg"></ion-icon>
               <ion-label>Cadastrar Ocorrencias</ion-label>
             </ion-item>

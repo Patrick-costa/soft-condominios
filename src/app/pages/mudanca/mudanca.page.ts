@@ -6,6 +6,8 @@ import { MudancaService } from 'src/app/share/utils/services/mudanca.service';
 import * as moment from 'moment';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-mudanca',
@@ -20,7 +22,9 @@ export class MudancaPage implements OnInit {
     private loadingController: LoadingController,
     private toastController: ToastController,
     private alertController: AlertController,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
   formulario: FormGroup;
   data: any;
@@ -28,20 +32,24 @@ export class MudancaPage implements OnInit {
   mudanca: AgendamentoMudanca = new AgendamentoMudanca;
   dataMudanca: string;
   horario: any = [];
+  condominio: any = [];
+  dados: any = [];
+  id: any;
 
   ngOnInit() {
     this.createForm();
     this.adapter.setLocale('br')
+    this.getUser()
   }
 
-  buscarHorario(){
-    return this.http.get('http://app.axdeveloper.com.br/agendamentos-mudanca/buscar-horarios?data='+ moment(this.dataMudanca).format('YYYY-MM-DD')).subscribe(x =>{
+  buscarHorario() {
+    return this.http.get('http://app.axdeveloper.com.br/agendamentos-mudanca/buscar-horarios?data=' + moment(this.dataMudanca).format('YYYY-MM-DD')).subscribe(x => {
       this.horario = x;
       console.log(this.horario);
     })
   }
 
-  async cadastrar(){
+  async cadastrar() {
     this.mudanca = {
       data: moment(this.formulario.get('diaMudanca').value).format('YYYY-MM-DD'),
       observacao: this.formulario.get('observacao').value,
@@ -55,8 +63,8 @@ export class MudancaPage implements OnInit {
       this.mudancaService.cadastrarMudanca(this.mudanca)
         .subscribe(complete => {
           console.log(complete.status);
-          return this.presentToastSuccess();
-
+         this.presentToastSuccess();
+          this.router.navigate(['visualizar-mudanca', this.id]);
         }, error => {
           console.log(error);
           let message: string
@@ -89,7 +97,6 @@ export class MudancaPage implements OnInit {
     }
     finally {
       this.loading.dismiss();
-
     }
   }
 
@@ -127,5 +134,18 @@ export class MudancaPage implements OnInit {
     });
     toast.present();
   }
+
+  getUser() {
+    this.http.get(`${environment.baseUrl}/usuarios/auth`).subscribe(x => {
+      let dados = JSON.stringify(x);
+      let usuario = dados;
+      this.dados = JSON.parse(usuario);
+      this.condominio = this.dados.condominio[0];
+      this.id = this.dados['condominio'].id;
+      console.log(this.id)
+    });
+    // console.log(this.id)
+  }
+
 
 }

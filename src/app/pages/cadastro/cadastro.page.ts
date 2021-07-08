@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {  Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { MoradorService } from '../../share/utils/services/morador.service';
 import { MoradorCadastro } from '../../core/models/moradorCadastro';
 import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { tap, finalize, mergeMap, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -15,12 +16,13 @@ import { tap, finalize, mergeMap, map } from 'rxjs/operators';
 export class CadastroPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
-              private moradorService: MoradorService,
-              private loadingController: LoadingController,
-              private toastController: ToastController,
-              private http: HttpClient,
-              private alertControl: AlertController,
-              ) { }
+    private moradorService: MoradorService,
+    private loadingController: LoadingController,
+    private toastController: ToastController,
+    private http: HttpClient,
+    private alertControl: AlertController,
+    private router: Router,
+  ) { }
 
   formulario: FormGroup;
   dados: any = [];
@@ -38,17 +40,17 @@ export class CadastroPage implements OnInit {
     this.createForm();
   }
 
-  apagarSenha(){
-    if(this.senha != this.confirmarSenha){
+  apagarSenha() {
+    if (this.senha != this.confirmarSenha) {
       return this.alertControlSenha();
     }
   }
 
-  teste(){
+  teste() {
     console.log(this.formulario.get('condominio').value)
   }
 
-  async cadastrar(){
+  async cadastrar() {
     this.morador = {
       apartamento: this.formulario.get('apartamento').value,
       bloco: this.formulario.get('bloco').value,
@@ -100,11 +102,11 @@ export class CadastroPage implements OnInit {
     }
     finally {
       this.loading.dismiss();
-
+      this.router.navigateByUrl('login');
     }
   }
 
-  createForm(){
+  createForm() {
     this.formulario = this.formBuilder.group({
       nome: ['', Validators.required],
       sobrenome: ['', Validators.required],
@@ -149,7 +151,7 @@ export class CadastroPage implements OnInit {
     toast.present();
   }
 
-  async alertControlSenha(){
+  async alertControlSenha() {
     const alert = await this.alertControl.create({
       message: 'Senhas não conferem, favor digite novamente',
       buttons: [{
@@ -183,7 +185,7 @@ export class CadastroPage implements OnInit {
             this.dados = JSON.parse(viacep);
             console.log(this.dados);
             this.bairro = this.dados['bairro']
-            this.http.get(`${environment.baseUrl}/condominios/search?bairro=`+ this.bairro).subscribe( x => {
+            this.http.get(`${environment.baseUrl}/condominios/search?bairro=` + this.bairro).subscribe(x => {
               this.condominio = x['content'];
               console.log(this.condominio);
             })

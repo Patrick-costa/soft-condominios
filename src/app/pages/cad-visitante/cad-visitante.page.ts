@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Visitante } from '../../core/models/visitante';
 import { VisitanteService } from '../../share/utils/services/visitante.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -16,7 +16,8 @@ export class CadVisitantePage implements OnInit {
               private activatedRoute: ActivatedRoute,
               private visitanteService: VisitanteService,
               private loadingController: LoadingController,
-              private toastController: ToastController) { }
+              private toastController: ToastController,
+              private router: Router) { }
 
   formulario: FormGroup
   visitante: Visitante = new Visitante();
@@ -46,8 +47,8 @@ export class CadVisitantePage implements OnInit {
       this.visitanteService.cadastrarVisitante(this.visitante)
         .subscribe(complete => {
           console.log(complete);
-          return this.presentToastSuccess();
-
+          this.presentToastSuccess();
+          this.router.navigate(['visualizar-visitante',this.id])
         }, error => {
           console.log(error);
           let message: string

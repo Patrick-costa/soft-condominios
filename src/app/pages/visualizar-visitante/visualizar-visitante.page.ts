@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
@@ -13,12 +13,13 @@ import { VisitanteService } from '../../share/utils/services/visitante.service';
 export class VisualizarVisitantePage implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-              private http: HttpClient,
-              private visitanteService: VisitanteService) { }
+    private http: HttpClient,
+    private visitanteService: VisitanteService,
+    private router: Router) { }
 
   id: any;
   visitante: any = [];
-  dataEntrada: any =[];
+  dataEntrada: any = [];
   dados: any = []
   filtro: string;
   funcao: string;
@@ -29,13 +30,14 @@ export class VisualizarVisitantePage implements OnInit {
     this.visualizar();
   }
 
-  visualizar(){
-    this.id = this.activatedRoute.snapshot.params['id'];
-    return this.http.get(`${environment.baseUrl}/visitantes/search?condominio=`+this.id+'&status=true').subscribe(x =>{
+  visualizar() {
+    this.http.get(`${environment.baseUrl}/visitantes/search?condominio=` + this.id + '&status=true').subscribe(x => {
       this.visitante = x['content']
       console.log(this.visitante)
       this.dataEntrada = moment(this.visitante['dataEntrada']).format('DD/MM/YYYY')
     });
+
+
   }
 
   alterar(id) {
@@ -43,20 +45,21 @@ export class VisualizarVisitantePage implements OnInit {
       status: 'false'
     }
     console.log(this.visitanteAtualizado);
-    return this.visitanteService.atualizarVisitante(id, this.visitanteAtualizado)
+      return this.visitanteService.atualizarVisitante(id, this.visitanteAtualizado, this.id)
+
   }
 
   filtrar() {
-        return this.http.get(`${environment.baseUrl}/visitantes/search?condominio=` + this.id + '&status=' + this.filtro).subscribe(
-        x => {
-          let visitante = x
-          this.visitante = visitante['content'];
-          console.log(this.visitante);
-          console.log(this.filtro)
-        }
-      )
-      
-    
+    return this.http.get(`${environment.baseUrl}/visitantes/search?condominio=` + this.id + '&status=' + this.filtro).subscribe(
+      x => {
+        let visitante = x
+        this.visitante = visitante['content'];
+        console.log(this.visitante);
+        console.log(this.filtro)
+      }
+    )
+
+
   }
 
   // getUser() {

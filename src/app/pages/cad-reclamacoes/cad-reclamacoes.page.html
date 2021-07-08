@@ -17,17 +17,9 @@
     <span>Crie reclamações ou ocorrências a respeito de moradores, sindico, funcionários ou serviços do condominio</span>
   </div>
 
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar();">
 
     <div class="inputs">
-
-      <div class="input-cadastro2">
-        <ion-label>Tipo</ion-label>
-        <ion-select formControlName="tipo">
-          <ion-select-option>Reclamação</ion-select-option>
-          <ion-select-option>Ocorrência</ion-select-option>
-        </ion-select>
-      </div>
 
       <div class="input-cadastro2">
         <ion-label>Título</ion-label>
@@ -47,7 +39,7 @@
         <input type="file" formControlName="fotoReclamacao" #file id="file" style="font-size: 13px !important">
       </div> 
 
-      <ion-button class="button-login">Cadastrar</ion-button>
+      <ion-button type="submit" class="button-login">Cadastrar</ion-button>
     </div>
   </form>
   <br>

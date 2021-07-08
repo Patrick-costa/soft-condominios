@@ -71,7 +71,8 @@ export class CadSindicoPage implements OnInit {
       this.sindicoService.cadastrarColaborador(this.sindico)
         .subscribe(complete => {
           console.log(complete.status);
-          return this.presentToastSuccess();
+          this.router.navigate(['cad-condominio'])
+          this.presentToastSuccess();
 
         }, error => {
           console.log(error);

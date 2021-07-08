@@ -71,8 +71,8 @@ export class CadColaboradorPage implements OnInit {
       this.colaboradorService.cadastrarFuncionario(this.funcionario)
         .subscribe(complete => {
           console.log(complete.status);
-          return this.presentToastSuccess();
-
+          this.presentToastSuccess();
+          this.router.navigate(['folder']);
         }, error => {
           console.log(error);
           let message: string

@@ -44,7 +44,7 @@
     </ion-list>
 
     <div class="entrega">
-      <button (click)="alterar(dados.id)">Finalizar</button>
+      <button (click)="alterar(dados.id)" [routerLink]="['visualizar-visitante',id]">Finalizar</button>
     </div>
   </mat-expansion-panel>
 

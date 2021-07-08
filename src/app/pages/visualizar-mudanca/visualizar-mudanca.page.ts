@@ -32,7 +32,6 @@ export class VisualizarMudancaPage implements OnInit {
     this.id = this.activatedRoute.snapshot.params['id'];
     return this.http.get(`${environment.baseUrl}/agendamentos-mudanca/search?condominio=`+this.id).subscribe(x =>{
       this.mudanca = x['content']
-      
     });
   }
 

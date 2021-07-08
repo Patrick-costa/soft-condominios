@@ -5,7 +5,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Encomenda } from '../../core/models/encomenda';
 import { environment } from '../../../environments/environment';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cad-encomenda',
@@ -19,7 +19,8 @@ export class CadEncomendaPage implements OnInit {
     private http: HttpClient,
     private toastController: ToastController,
     private loadingController: LoadingController,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   formulario: FormGroup;
   loading: any;
@@ -73,7 +74,8 @@ export class CadEncomendaPage implements OnInit {
       this.encomendaService.cadastrarEncomenda(this.encomenda)
         .subscribe(complete => {
           console.log(complete.status);
-          return this.presentToastSuccess();
+          this.presentToastSuccess();
+          this.router.navigate(['visualizar-encomenda', this.idRoute]);
 
         }, error => {
           console.log(error);

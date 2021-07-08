@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/documentos/documentos.module').then( m => m.DocumentosPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
-    path: 'cad-reclamacoes',
+    path: 'cad-reclamacoes/:id',
     loadChildren: () => import('./pages/cad-reclamacoes/cad-reclamacoes.module').then( m => m.CadReclamacoesPageModule),  canActivate:[AutenticacaoGuard]
   },
   {
@@ -53,7 +53,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/visualizar-visitante/visualizar-visitante.module').then( m => m.VisualizarVisitantePageModule),  canActivate:[AutenticacaoGuard]
   },
   {
-    path: 'visualizar-ocorrencia',
+    path: 'visualizar-ocorrencia/:id',
     loadChildren: () => import('./pages/visualizar-ocorrencia/visualizar-ocorrencia.module').then( m => m.VisualizarOcorrenciaPageModule),  canActivate:[AutenticacaoGuard]
   },
   {

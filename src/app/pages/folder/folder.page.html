@@ -129,7 +129,7 @@
         </ion-col>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;" *ngIf='funcao == "Sindico" || funcao == "Zelador"'>
-          <div class="div-option" routerLink="/visualizar-ocorrencia">
+          <div class="div-option" [routerLink]='["/visualizar-ocorrencia",idCondominio]'>
             <ion-icon style="color: #fff; font-size: 40px; text-align: center;" src="../../assets/icon/ocorrencia.svg">
             </ion-icon>
             <span class="span-text-option">Ocorrências</span>
@@ -137,7 +137,7 @@
         </ion-col>
 
         <ion-col size="6" style="margin: 0 auto; text-align: center;" *ngIf='funcao != "Sindico"'>
-          <div class="div-option" routerLink="/cad-reclamacoes">
+          <div class="div-option" [routerLink]='["/cad-reclamacoes",idCondominio]'>
             <ion-icon style="color: #fff; font-size: 40px; text-align: center;" src="../../assets/icon/ocorrencia.svg">
             </ion-icon>
             <span class="span-text-option">Cadastrar<br>Ocorrencias</span>
