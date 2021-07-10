@@ -53,7 +53,7 @@ export class VisualizarOcorrenciaPage implements OnInit {
     console.log(this.descricao)
     try {
       await this.presentLoading();
-      this.ocorrenciaService.enviarMensagem(this.mensagem, id)
+      this.ocorrenciaService.enviarMensagem(this.descricao, id)
         .subscribe(complete => {
           console.log(complete.status);
           this.presentToastSuccess();

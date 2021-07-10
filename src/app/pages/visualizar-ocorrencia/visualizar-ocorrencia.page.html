@@ -77,14 +77,11 @@
       <b>Ultimos Comentários</b>
     </h4>
 
-    <ion-card>
+    <ion-card *ngFor="let comentarios of dados.comentarios">
       <ion-card-content>
-        <span style="color: #7F2FF0; font-size: 13px;">Maicon Hugo</span>
+        <span style="color: #7F2FF0; font-size: 13px;">{{comentarios.autor}}</span>
         <br>
-        <span style="font-size: 12px;">Aglomeração no apartamento 501</span>
-        <br>
-        <span style="font-size: 10px;">5 horas atrás</span>
-        <br>
+        <span style="font-size: 12px;">{{comentarios.descricao}}</span>
       </ion-card-content>
     </ion-card>
 
